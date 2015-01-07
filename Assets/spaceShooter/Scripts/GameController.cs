@@ -3,7 +3,6 @@ using System.Collections;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject ship;
     public GameObject hazard;
     public GameObject enemyShip;
     public GameObject parentObject;
@@ -45,6 +44,7 @@ public class GameController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.N) && !isNewStarted) 
             {
                 this.audio.Play();
+                CameraManager.SelectCamera(2);
                 startCoroutine = true;
             }
             isNewStarted = true;
@@ -69,11 +69,6 @@ public class GameController : MonoBehaviour
     IEnumerator SpawnWaves()
     {
         startCoroutine = false;
-        Vector3 spawnShipPosition = new Vector3(0f, 0f, 0f);
-        Quaternion spawnShipRotation = Quaternion.identity;
-        spawnShipPosition += parentObject.transform.position;
-        GameObject localShip = Instantiate(ship, spawnShipPosition, spawnShipRotation) as GameObject;
-        localShip.transform.parent = parentObject.transform;
         yield return new WaitForSeconds(startWait);
         for (int i = 0; i < waveHazardCount; i++)
         {
@@ -106,7 +101,7 @@ public class GameController : MonoBehaviour
             }
             Vector3 spawnPosition = new Vector3(Random.RandomRange(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
             spawnPosition += parentObject.transform.position;
-            GameObject local = Instantiate(hazard, spawnPosition, enemyShip.transform.rotation) as GameObject;
+            GameObject local = Instantiate(enemyShip, spawnPosition, enemyShip.transform.rotation) as GameObject;
             local.transform.parent = parentObject.transform;
             yield return new WaitForSeconds(waveWait);
         }
@@ -132,5 +127,6 @@ public class GameController : MonoBehaviour
         gameOverText.text = "Game Over";
         gameOver = true;
         this.audio.Stop();
+        CameraManager.SelectCamera(0);//chwilowo******************************
     }
 }
