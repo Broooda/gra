@@ -68,6 +68,7 @@
      <Compile Include="Assets\spaceShooter\Scripts\PlayerController.cs" />
      <Compile Include="Assets\spaceShooter\Scripts\RandomRotator.cs" />
      <Compile Include="Assets\spaceShooter\Scripts\ReuseableClasses\Boundry.cs" />
+     <Compile Include="Assets\spaceShooter\Scripts\ShooterStarter.cs" />
      <None Include="Assets\spaceShooter\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
   </ItemGroup>

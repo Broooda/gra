@@ -4,6 +4,7 @@ using System.Collections;
 public class GameController : MonoBehaviour
 {
     public GameObject hazard;
+    public GameObject ship;
     public GameObject enemyShip;
     public GameObject parentObject;
     public Vector3 spawnValues;
@@ -22,7 +23,7 @@ public class GameController : MonoBehaviour
     private bool restart;
     private int score;
     private bool startCoroutine;
-    private bool isNewStarted;
+    public static bool isNewStarted;
 
     void Start()
     {
@@ -31,19 +32,20 @@ public class GameController : MonoBehaviour
         gameOver = false;
         restart = false;
         restartText.text = "";
-        gameOverText.text = "PRESS 'N' TO START";
+        gameOverText.text = "";
         score = 0;
         UpdateScore();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
+        if (ShooterStarter.gameIsEnabled)
         {
             gameOverText.text = "";
-            if (Input.GetKeyDown(KeyCode.N) && !isNewStarted) 
+            if ((ShooterStarter.gameIsEnabled) && !isNewStarted) 
             {
                 this.audio.Play();
+                enemyShip.audio.mute = false;
                 CameraManager.SelectCamera(2);
                 startCoroutine = true;
             }
@@ -69,6 +71,13 @@ public class GameController : MonoBehaviour
     IEnumerator SpawnWaves()
     {
         startCoroutine = false;
+
+        Vector3 spawnPositionship = new Vector3(0f,0f,0f);
+        spawnPositionship += parentObject.transform.position;
+        Quaternion spawnRotationship = Quaternion.identity;
+        GameObject localship = Instantiate(ship, spawnPositionship, spawnRotationship) as GameObject;
+        localship.transform.parent = parentObject.transform;
+
         yield return new WaitForSeconds(startWait);
         for (int i = 0; i < waveHazardCount; i++)
         {
@@ -88,7 +97,9 @@ public class GameController : MonoBehaviour
             {
                 restartText.text = "Press 'R' for Restart";
                 restart = true;
-                break;
+                //isNewStarted = false;
+                gameOver = false;
+                yield break;
             }
         }
         for (int i = 0; i < waveEnemyShipCount; i++)
@@ -97,7 +108,9 @@ public class GameController : MonoBehaviour
             {
                 restartText.text = "Press 'R' for Restart";
                 restart = true;
-                break;
+                //isNewStarted = false;
+                gameOver = false;
+                yield break;
             }
             Vector3 spawnPosition = new Vector3(Random.RandomRange(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
             spawnPosition += parentObject.transform.position;
@@ -128,5 +141,8 @@ public class GameController : MonoBehaviour
         gameOver = true;
         this.audio.Stop();
         CameraManager.SelectCamera(0);//chwilowo******************************
+        GameObject.Find("First Person Controller").SendMessage("SetControllable", true);
+        ShooterStarter.gameIsEnabled = false;
+        //isNewStarted = false;
     }
 }
