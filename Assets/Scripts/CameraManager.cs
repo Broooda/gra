@@ -7,12 +7,14 @@ public class CameraManager : MonoBehaviour {
 	public GameObject cam1;
 	public GameObject cam2;
 	public GameObject cam3;
+	public GameObject cam4;
 	// Use this for initialization
 	void Start () {
 		cameras = new GameObject[3];
 		cameras [0] = cam1;
 		cameras [1] = cam2;
 		cameras [2] = cam3;
+		cameras [3] = cam4;
 	}
 	// Update is called once per frame
 	void Update () {

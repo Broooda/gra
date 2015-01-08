@@ -8,12 +8,12 @@ public class DoorTrigger : MonoBehaviour {
 	void Update(){
 		if (Input.GetKey(KeyCode.E) && param==true) {
 			if(transform.FindChild("body").localEulerAngles.y < 90.0f){
-				transform.FindChild("body").Rotate(Vector3.up*Time.deltaTime*speedOpen);
+				transform.FindChild("body").Rotate(Vector3.up*0.04f*speedOpen);
 			}
 		}
 		if(doorIsOpen){
 			if(transform.FindChild("body").localEulerAngles.y > 2){
-				transform.FindChild("body").Rotate(Vector3.down*Time.deltaTime*speedOpen);
+				transform.FindChild("body").Rotate(Vector3.down*0.04f*speedOpen);
 			}
 			else{
 				doorIsOpen=false;
