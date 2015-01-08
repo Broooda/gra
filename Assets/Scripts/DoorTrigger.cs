@@ -13,7 +13,7 @@ public class DoorTrigger : MonoBehaviour {
 		}
 		if(doorIsOpen){
 			if(transform.FindChild("body").localEulerAngles.y > 2){
-				transform.FindChild("body").Rotate(Vector3.down*0.04f*speedOpen);
+				transform.FindChild("body").Rotate(Vector3.down*0.02f*speedOpen);
 			}
 			else{
 				doorIsOpen=false;

@@ -10,7 +10,7 @@ public class CameraManager : MonoBehaviour {
 	public GameObject cam4;
 	// Use this for initialization
 	void Start () {
-		cameras = new GameObject[3];
+		cameras = new GameObject[4];
 		cameras [0] = cam1;
 		cameras [1] = cam2;
 		cameras [2] = cam3;
