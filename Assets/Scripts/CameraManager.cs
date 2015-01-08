@@ -19,12 +19,20 @@ public class CameraManager : MonoBehaviour {
 	
 	}
 	public static void SelectCamera(int index){
+		AudioListener camListener;
 		for(int i=0; i<cameras.Length;i++){
+			camListener=cameras[i].GetComponent<AudioListener>();
 			if(i==index){
 				cameras[i].camera.active=true;
+				if(camListener.enabled==false){
+					camListener.enabled=true;
+				}
 			}
 			else{
 				cameras[i].camera.active=false;
+				if(camListener.enabled==true){
+					camListener.enabled=false;
+				}
 			}
 		}
 	}

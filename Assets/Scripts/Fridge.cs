@@ -13,6 +13,7 @@ public class Fridge : MonoBehaviour {
 	void Update(){
 		if (Input.GetKey(KeyCode.E) && param==true) {
 			if(!firstOpen){
+				GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
 				CameraManager.SelectCamera (1);
 				firstOpen=true;
 			}

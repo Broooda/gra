@@ -13,8 +13,7 @@ public class TigerRoom : MonoBehaviour {
 				transform.FindChild("body").Rotate(Vector3.up*Time.deltaTime*speedOpen);
 			}
 			else{
-				Tiger();
-				doorIsOpen=true;
+				StartCoroutine("delay");
 			}
 		}
 		if(doorIsOpen){
@@ -36,6 +35,11 @@ public class TigerRoom : MonoBehaviour {
 	}
 	void Tiger(){
 		this.audio.PlayOneShot(TigerVoice);
+	}
+	IEnumerator delay(){
+		Tiger();
+		yield return new WaitForSeconds (0.2f);
+		doorIsOpen=true;
 	}
 
 }
