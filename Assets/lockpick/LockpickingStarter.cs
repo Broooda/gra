@@ -20,12 +20,12 @@ public class LockpickingStarter : MonoBehaviour
 				lockpickIsEnabled = true;
 			}
 		}
-		if (Input.GetKeyDown(KeyCode.Escape))
+		/*if (Input.GetKeyDown(KeyCode.Escape) && param==true)
 		{
 			lockpickIsEnabled = false;
 			GameObject.Find("First Person Controller").SendMessage("SetControllable",true);
 			CameraManager.SelectCamera (0);
-		}
+		}*/
 		if (MotherScript.good == 5) {
 			lockpickIsEnabled = false;
 			GameObject.Find("First Person Controller").SendMessage("SetControllable",true);
