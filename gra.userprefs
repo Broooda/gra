@@ -1,10 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Blocks\Scripts\LaserScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\tarantinoCode.cs">
     <Files>
-      <File FileName="Assets\Blocks\Scripts\MainGameScript.cs" Line="5" Column="25" />
-      <File FileName="Assets\Blocks\Scripts\LaserScript.cs" Line="23" Column="3" />
-      <File FileName="Assets\Scripts\TigerRoom.cs" Line="37" Column="3" />
+      <File FileName="Assets\Scripts\CameraManager.cs" Line="15" Column="29" />
+      <File FileName="Assets\KeyPad\clickOnEnterC.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\backC.cs" Line="1" Column="1" />
+      <File FileName="Assets\tarantino\ArronClick.cs" Line="1" Column="1" />
+      <File FileName="Assets\odpalamTaboret.cs" Line="1" Column="1" />
+      <File FileName="Assets\tarantinoCode.cs" Line="10" Column="15" />
+      <File FileName="Assets\tarantino\EnteronClickc.cs" Line="12" Column="33" />
+      <File FileName="Assets\Scripts\DoorTrigger.cs" Line="10" Column="63" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
