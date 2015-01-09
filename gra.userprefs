@@ -1,11 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\lockpick\LockpickingStarter.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\backC.cs">
     <Files>
-      <File FileName="Assets\lockpick\LockpickingStarter.cs" Line="23" Column="4" />
-      <File FileName="Assets\lockpick\MotherScript.js" Line="24" Column="37" />
-      <File FileName="Assets\lockpick\MovingScript.js" Line="11" Column="21" />
-      <File FileName="Assets\Scripts\CameraManager.cs" Line="19" Column="22" />
+      <File FileName="Assets\KeyPad\clickOn0C.cs" Line="7" Column="2" />
+      <File FileName="Assets\KeyPad\clickOn9C.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\clickOn1C.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\clickOn6C.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\clickOn4C.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\clickOn7C.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\clickOn3C.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\clickOn8C.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\clickOn2C.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\clickOn5C.cs" Line="1" Column="1" />
+      <File FileName="Assets\KeyPad\clickOnEnterC.cs" Line="16" Column="24" />
+      <File FileName="Assets\backC.cs" Line="4" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
