@@ -20,7 +20,8 @@ public class CameraManager : MonoBehaviour {
 		
         for (int i = 1; i < cameras.Length; i++) //na poczatku wylacza wszsytkie kamery oprocz glownej
         {
-            cameras[i].active = false;
+            //cameras[i].active = false;
+			cameras[i].SetActive(false);
         }
             
 	}
@@ -33,13 +34,15 @@ public class CameraManager : MonoBehaviour {
 		for(int i=0; i<cameras.Length;i++){
 			camListener=cameras[i].GetComponent<AudioListener>();
 			if(i==index){
-				cameras[i].active=true;
+				//cameras[i].active=true;
+				cameras[i].SetActive(true);
 				if(camListener.enabled==false){
 					camListener.enabled=true;
 				}
 			}
 			else{
-				cameras[i].active=false;
+				//cameras[i].active=false;
+				cameras[i].SetActive(false);
 				if(camListener.enabled==true){
 					camListener.enabled=false;
 				}

@@ -10,7 +10,7 @@ public class TigerRoom : MonoBehaviour {
 	void Update(){
 		if (Input.GetKey(KeyCode.E) && param==true) {
 			if(transform.FindChild("body").localEulerAngles.y < 10.0f){
-				transform.FindChild("body").Rotate(Vector3.up*Time.deltaTime*speedOpen);
+				transform.FindChild("body").Rotate(Vector3.up*0.04f*speedOpen);
 			}
 			else{
 				StartCoroutine("delay");
@@ -18,7 +18,7 @@ public class TigerRoom : MonoBehaviour {
 		}
 		if(doorIsOpen){
 			if(transform.FindChild("body").localEulerAngles.y > 2.0f){
-				transform.FindChild("body").Rotate(Vector3.down*Time.deltaTime*speedOpen);
+				transform.FindChild("body").Rotate(Vector3.down*0.02f*speedOpen);
 			}
 			else{
 				doorIsOpen=false;

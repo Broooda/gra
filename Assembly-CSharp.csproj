@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>d:/Programy/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>d:/Programy/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -63,12 +63,14 @@
      <Compile Include="Assets\KeyPad\clickOn9C.cs" />
      <Compile Include="Assets\KeyPad\clickOnEnterC.cs" />
      <Compile Include="Assets\KeyPad\cliclOnDelC.cs" />
+     <Compile Include="Assets\Scripts\ActiveCode.cs" />
      <Compile Include="Assets\Scripts\CameraManager.cs" />
      <Compile Include="Assets\Scripts\DoorTrigger.cs" />
      <Compile Include="Assets\Scripts\Fridge.cs" />
      <Compile Include="Assets\Scripts\LatarkaTrigger.cs" />
      <Compile Include="Assets\Scripts\PickUpObject.cs" />
      <Compile Include="Assets\Scripts\TigerRoom.cs" />
+     <Compile Include="Assets\Scripts\UV.cs" />
      <Compile Include="Assets\Scripts\positionCS.cs" />
      <Compile Include="Assets\backC.cs" />
      <Compile Include="Assets\lockpick\CheckScript.cs" />

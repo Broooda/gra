@@ -12,6 +12,7 @@ public class SquareScript : MonoBehaviour {
 	public bool end;
 	private bool check=false;
 	private bool check2=false;
+	public AudioClip off;
 	Sprite select;
 	Sprite unselect;
 	
@@ -38,6 +39,7 @@ public class SquareScript : MonoBehaviour {
 			}
 			if(licznik==3){
 				GameObject.Destroy(localLaser);
+				this.audio.PlayOneShot(off);
 				if(check==true && check2==false){
 					Subtract();
 					check=false;

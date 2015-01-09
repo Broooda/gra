@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MainGameScript : MonoBehaviour {
-	public GUIText winText;
+	public TextMesh winText;
 	void Start () {
 		winText.text = "";
 	}

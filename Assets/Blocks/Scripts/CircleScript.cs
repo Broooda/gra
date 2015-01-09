@@ -12,6 +12,7 @@ public class CircleScript : MonoBehaviour {
 	private bool check=false;
 	private bool check2=false;
 	public static bool flag;
+	public AudioClip off;
 	Sprite select;
 	Sprite unselect;
 
@@ -38,6 +39,7 @@ public class CircleScript : MonoBehaviour {
 			}
 			if(licznik==3){
 				GameObject.Destroy(localLaser);
+				this.audio.PlayOneShot(off);
 				if(check==true && check2==false){
 					Subtract();
 					check=false;

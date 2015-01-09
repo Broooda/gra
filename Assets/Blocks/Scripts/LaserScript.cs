@@ -16,7 +16,12 @@ public class LaserScript : MonoBehaviour
 	public static bool endFlagCircle=false;
 	public static bool endFlagHexagon=false;
 	public static bool endFlagSquare=false;
+	public AudioClip on;
+	public AudioClip clash;
 
+	void Start(){
+		this.audio.PlayOneShot(on);
+	}
 
 	void Update()
 	{
@@ -73,18 +78,21 @@ public class LaserScript : MonoBehaviour
 			if(hit.collider.gameObject.tag=="square" && this.transform.parent.gameObject.tag=="square"){
 				hit.collider.gameObject.SendMessage("SetFlag");
 				this.transform.parent.gameObject.SendMessage("Add");
+				this.audio.PlayOneShot(clash);
 				square=true;
 			}
 			if(hit.collider.gameObject.tag=="circle" && this.transform.parent.gameObject.tag=="circle"){
 				//hit.collider.gameObject.SendMessage("Add");
 				hit.collider.gameObject.SendMessage("SetFlag");
 				this.transform.parent.gameObject.SendMessage("Add");
+				this.audio.PlayOneShot(clash);
 				circle=true;
 			}
 			if(hit.collider.gameObject.tag=="hexagon" && this.transform.parent.gameObject.tag=="hexagon"){
 				//hit.collider.gameObject.SendMessage("Add");
 				hit.collider.gameObject.SendMessage("SetFlag");
 				this.transform.parent.gameObject.SendMessage("Add");
+				this.audio.PlayOneShot(clash);
 				hexagon=true;
 			}
 		}
