@@ -72,7 +72,7 @@
      <Compile Include="Assets\Scripts\PickUpObject.cs" />
      <Compile Include="Assets\Scripts\TigerRoom.cs" />
      <Compile Include="Assets\Scripts\UV.cs" />
-     <Compile Include="Assets\Scripts\positionCS.cs" />
+     <Compile Include="Assets\Scripts\hud.cs" />
      <Compile Include="Assets\lockpick\CheckScript.cs" />
      <Compile Include="Assets\lockpick\LockpickingStarter.cs" />
      <Compile Include="Assets\lockpick\MotherScript.cs" />
@@ -103,7 +103,7 @@
      <Compile Include="Assets\tarantino\TonClick.cs" />
      <Compile Include="Assets\tarantino\UonClick.cs" />
      <Compile Include="Assets\tarantino\boardInput.cs" />
-     <Compile Include="Assets\tarantinoCode.cs" />
+     <Compile Include="Assets\tarantino\tarantinoCode.cs" />
      <None Include="Assets\spaceShooter\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
   </ItemGroup>

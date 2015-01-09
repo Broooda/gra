@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 5e971f52e013cf34e865c053c2b1264c
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - myBoxTexture: {instanceID: 0}
+  - zielony_klucz: {fileID: 2800000, guid: 629b616364b3bc44cad1b3402ab49366, type: 3}
+  - niebieski_klucz: {fileID: 2800000, guid: 8287bf96a71ee074ea18924d17d59b2c, type: 3}
+  - czerwony_klucz: {fileID: 2800000, guid: ae5269a2571d5714c90ae471c266a974, type: 3}
+  - zloty_klucz: {fileID: 2800000, guid: e1aa772f40546814ba326753f808f3bf, type: 3}
+  - srebrny_klucz: {fileID: 2800000, guid: cc09eb61e386f804c8c22940136ed1e2, type: 3}
+  - latarka: {fileID: 2800000, guid: fd3cbf51780694849b9b019b36a3938e, type: 3}
+  - latarkauv: {fileID: 2800000, guid: 6e3730451fa077346abd4ac642ea71d8, type: 3}
+  - line: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
