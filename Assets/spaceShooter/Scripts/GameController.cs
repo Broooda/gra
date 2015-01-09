@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class GameController : MonoBehaviour
-{
+{ 
     public GameObject hazard;
     public GameObject ship;
     public GameObject enemyShip;

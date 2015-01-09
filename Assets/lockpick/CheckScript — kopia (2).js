@@ -14,6 +14,9 @@ function Start(){
 }
 
 function Update(){
+ 	if (Input.GetKey(KeyCode.Escape)) { 
+ 		Application.Quit(); 
+ 	}
 	if(done==false){
 		if(transform.position.y > open-range){
 			if(me==MotherScript.now){
