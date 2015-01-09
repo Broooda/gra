@@ -16,4 +16,8 @@ public class odpalamTaboret : MonoBehaviour {
 			param=true;
 		}
 	}
+	void OnTriggerExit(){
+		param = false;
+	}
+
 }

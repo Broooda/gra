@@ -25,10 +25,8 @@ public class tarantinoCode : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit(Collider col){
-		if(col.gameObject.tag=="Player"){
-			param=false;
-		}
+	void OnTriggerExit(){
+		param = false;
 	}
 
 }
