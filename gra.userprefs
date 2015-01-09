@@ -1,15 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\hud.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Blocks\Scripts\MainGameScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\hud.cs" Line="34" Column="16" />
-      <File FileName="Assets\Scripts\CameraManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\KeyPad\clickOnEnterC.cs" Line="1" Column="1" />
-      <File FileName="Assets\KeyPad\backC.cs" Line="1" Column="1" />
-      <File FileName="Assets\tarantino\ArronClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\odpalamTaboret.cs" Line="1" Column="1" />
-      <File FileName="Assets\tarantino\EnteronClickc.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DoorTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Blocks\Scripts\MainGameScript.cs" Line="23" Column="21" />
+      <File FileName="Assets\Scripts\hud.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PickUpObject.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -20,5 +20,6 @@ public class MainGameScript : MonoBehaviour {
 		yield return new WaitForSeconds (2);
 		CameraManager.SelectCamera (0);
 		GameObject.Find ("First Person Controller").SendMessage ("SetControllable", true);
+		winText.text = "";
 	}
 }

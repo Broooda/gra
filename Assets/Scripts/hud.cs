@@ -15,8 +15,8 @@ public class hud : MonoBehaviour {
 	public Texture line;
 	private int boxWidth= 140;
 	private int boxPosition= 0;
-	private Hashtable allitems = new Hashtable();
-	private Hashtable myitems = new Hashtable();
+	private static Hashtable allitems = new Hashtable();
+	private static Hashtable myitems = new Hashtable();
 
 	void Start(){
 		allitems.Add ("Zielony klucz", zielony_klucz);
@@ -25,7 +25,7 @@ public class hud : MonoBehaviour {
 		allitems.Add ("Zloty klucz", zloty_klucz);
 		allitems.Add ("Srebrny klucz", srebrny_klucz);
 		allitems.Add ("Latarka", latarka);
-		allitems.Add ("Latarka UV", latarkauv);
+		allitems.Add ("UV", latarkauv);
 	}
 
 	void OnGUI(){	
@@ -41,7 +41,7 @@ public class hud : MonoBehaviour {
 		}
 	}
 
-	public void addItem(string s){
+	public static void addItem(string s){
 		myitems.Add (s, allitems[s]);
 	}
 }
