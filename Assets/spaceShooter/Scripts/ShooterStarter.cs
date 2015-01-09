@@ -15,7 +15,6 @@ public class ShooterStarter : MonoBehaviour
             param = false;
             if (!gameIsEnabled)
             {
-                GameController.isNewStarted = false;
 				GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
 				CameraManager.SelectCamera (2);
                 gameIsEnabled = true;

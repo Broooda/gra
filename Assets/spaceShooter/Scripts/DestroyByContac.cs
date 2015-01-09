@@ -33,7 +33,6 @@ public class DestroyByContac : MonoBehaviour
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
             gameController.GameOver();
         }
-        gameController.AddScore(scoreValue);
         Destroy(other.gameObject);//niszczy pocisk lub statek, zależy czyj collider wejdzie w collider asteroidy 
         Destroy(gameObject);//niszczy asteroide
     }

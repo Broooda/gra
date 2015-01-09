@@ -14,42 +14,39 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public bool isNewStarted;
 
-    public GUIText scoreText;
-    public GUIText restartText;
-    public GUIText gameOverText;
+    public TextMesh text3D;
 
     private bool gameOver;
     private bool restart;
     private int score;
     private bool startCoroutine;
-    public static bool isNewStarted;
 
     void Start()
     {
         startCoroutine = false;
-        isNewStarted = false;
-        gameOver = false;
+        //isNewStarted = false;
+        gameOver = true;
         restart = false;
-        restartText.text = "";
-        gameOverText.text = "";
+        text3D.text = "";
         score = 0;
-        UpdateScore();
+        isNewStarted = false;
     }
 
     void Update()
     {
         if (ShooterStarter.gameIsEnabled)
         {
-            gameOverText.text = "";
             if ((ShooterStarter.gameIsEnabled) && !isNewStarted) 
             {
+                text3D.text = "";
                 this.audio.Play();
                 enemyShip.audio.mute = false;
                 CameraManager.SelectCamera(2);
                 startCoroutine = true;
+                isNewStarted = true;
             }
-            isNewStarted = true;
         }
         if (startCoroutine)
         {
@@ -59,18 +56,17 @@ public class GameController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                Application.LoadLevel(Application.loadedLevel);
+                StopCoroutine(SpawnWaves());
+                isNewStarted = false;
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
         }
     }
 
     IEnumerator SpawnWaves()
     {
         startCoroutine = false;
+        gameOver = false;
+        restart = false;
 
         Vector3 spawnPositionship = new Vector3(0f,0f,0f);
         spawnPositionship += parentObject.transform.position;
@@ -95,22 +91,22 @@ public class GameController : MonoBehaviour
 
             if (gameOver)
             {
-                restartText.text = "Press 'R' for Restart";
+                text3D.text = "Game Over";
+                yield return new WaitForSeconds(2);
+                text3D.text = "Press 'R' for Restart";
                 restart = true;
-                //isNewStarted = false;
-                gameOver = false;
-                yield break;
+                break;
             }
         }
         for (int i = 0; i < waveEnemyShipCount; i++)
         {
             if (gameOver)
             {
-                restartText.text = "Press 'R' for Restart";
+                text3D.text = "Game Over";
+                yield return new WaitForSeconds(2);
+                text3D.text = "Press 'R' for Restart";
                 restart = true;
-                //isNewStarted = false;
-                gameOver = false;
-                yield break;
+                break;
             }
             Vector3 spawnPosition = new Vector3(Random.RandomRange(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
             spawnPosition += parentObject.transform.position;
@@ -120,29 +116,16 @@ public class GameController : MonoBehaviour
         }
         if (!gameOver)
         {
-            gameOverText.text = "You Won";
+            text3D.text = "You Won";
+            yield return new WaitForSeconds(2);
+            this.audio.Stop();
+            CameraManager.SelectCamera(0);
+            GameObject.Find("First Person Controller").SendMessage("SetControllable", true);
         }
-    }
-
-    public void AddScore(int newScoreValue)
-    {
-        score += newScoreValue;
-        UpdateScore();
-    }
-
-    void UpdateScore()
-    {
-        scoreText.text = "Score: " + score;
     }
 
     public void GameOver()
     {
-        gameOverText.text = "Game Over";
         gameOver = true;
-        this.audio.Stop();
-        CameraManager.SelectCamera(0);//chwilowo******************************
-        GameObject.Find("First Person Controller").SendMessage("SetControllable", true);
-        ShooterStarter.gameIsEnabled = false;
-        //isNewStarted = false;
     }
 }

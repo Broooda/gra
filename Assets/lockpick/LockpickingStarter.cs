@@ -15,7 +15,6 @@ public class LockpickingStarter : MonoBehaviour
 			param = false;
 			if (!lockpickIsEnabled)
 			{
-				GameController.isNewStarted = false;
 				GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
 				CameraManager.SelectCamera (4);
 				lockpickIsEnabled = true;
