@@ -39,23 +39,23 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Programy/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Programy/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\startClick.js" />
-     <Compile Include="Assets\lockpick\CheckScript — kopia (2).js" />
-     <Compile Include="Assets\lockpick\CheckScript — kopia.js" />
-     <Compile Include="Assets\lockpick\CheckScript.js" />
-     <Compile Include="Assets\lockpick\MotherScript.js" />
-     <Compile Include="Assets\lockpick\MovingScript.js" />
+     <Compile Include="Assets\lockpick\kopie zapasowe\CheckScript — kopia (2).js" />
+     <Compile Include="Assets\lockpick\kopie zapasowe\CheckScript — kopia.js" />
+     <Compile Include="Assets\lockpick\kopie zapasowe\CheckScript.js" />
+     <Compile Include="Assets\lockpick\kopie zapasowe\MotherScript.js" />
+     <Compile Include="Assets\lockpick\kopie zapasowe\MovingScript.js" />
      <None Include="Assets\spaceShooter\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Mariusz/Documents/GitHub/gra/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>D:/GitHub/gra/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
