@@ -22,8 +22,8 @@ public class MotherScript : MonoBehaviour {
 		if(good<=order.Length-1){
 			now=order[good];
 		}
-		Debug.Log("Good:"+good);
-		Debug.Log("ktore(NOW)"+now);
+		//Debug.Log("Good:"+good);
+		//Debug.Log("ktore(NOW)"+now);
 	}
 	
 	void  Shuffle (int[] deck){
