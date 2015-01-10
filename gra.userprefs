@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UV.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\UV.cs" Line="9" Column="27" />
-      <File FileName="Assets\Scripts\LatarkaTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UVTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PickUpObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ActiveCode.cs" Line="1" Column="1" />
+      <File FileName="Assets\CrappyBird\Scripts\BirdStarter.cs" Line="1" Column="1" />
+      <File FileName="Assets\CrappyBird\Scripts\Generate.cs" Line="20" Column="41" />
+      <File FileName="Assets\Scripts\CameraManager.cs" Line="13" Column="2" />
+      <File FileName="Assets\CrappyBird\Scripts\Player.cs" Line="11" Column="4" />
+      <File FileName="Assets\CrappyBird\Scripts\Obstacle.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
