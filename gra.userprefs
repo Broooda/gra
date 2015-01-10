@@ -1,11 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\odpalamTaboret.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\onStartClick.cs">
     <Files>
-      <File FileName="Assets\tarantino\tarantinoCode.cs" Line="28" Column="23" />
+      <File FileName="Assets\tarantino\tarantinoCode.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PickUpObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\odpalamTaboret.cs" Line="19" Column="23" />
-      <File FileName="Assets\Scripts\DoorTrigger.cs" Line="31" Column="3" />
+      <File FileName="Assets\odpalamTaboret.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DoorTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\exitClick.cs" Line="10" Column="21" />
+      <File FileName="Assets\onStartClick.cs" Line="10" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
