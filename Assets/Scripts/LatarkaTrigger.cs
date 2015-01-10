@@ -19,7 +19,7 @@ public class LatarkaTrigger : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.E) && param == true && Time.time > nextSwitch)
+        if (Input.GetKey(KeyCode.F) && param == true && Time.time > nextSwitch)
         {
             if (latarka.intensity == lowIntensity)
             {

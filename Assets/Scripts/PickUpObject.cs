@@ -19,6 +19,6 @@ public class PickUpObject : MonoBehaviour {
 		}
 	}
 	void OnTriggerExit(){
-		param=true;
+		param=false;
 	}
 }
