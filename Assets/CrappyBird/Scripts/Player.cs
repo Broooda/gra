@@ -9,21 +9,20 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		// Jump
-		if (Input.GetKeyUp("space"))
-		{
-			rigidbody2D.velocity = Vector2.zero;
-			rigidbody2D.AddForce(jumpForce);
-		}
+				if (BirdStarter.birdEnabled == true) {
+						// Jump
+						if (Input.GetKeyUp ("space")) {
+								rigidbody2D.velocity = Vector2.zero;
+								rigidbody2D.AddForce (jumpForce);
+						}
 		
-		// Die by being off screen
-		Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-		if (screenPosition.y > Screen.height || screenPosition.y < 0)
-		{
-			Die();
+						// Die by being off screen
+						Vector2 screenPosition = Camera.main.WorldToScreenPoint (transform.position);
+						if (screenPosition.y > Screen.height || screenPosition.y < 0) {
+								Die ();
+						}
+				}
 		}
-	}
-	
 	// Die by collision
 	void OnCollisionEnter2D(Collision2D coll)
 	{ if (coll.gameObject.tag == "Finish") {

@@ -6,22 +6,28 @@ public class Generate : MonoBehaviour
 	public GameObject water;
 	int score = 0;
 	bool once = false;
-	// Use this for initialization
-	void Start()
+
+
+
+
+
+
+
+	void Update()
 	{	
-		if(BirdStarter.birdEnabled == true)
-		InvokeRepeating("CreateObstacle", 1f, 1.5f);
-		else return;
-	}
+				if (BirdStarter.birdEnabled == true) {
+						InvokeRepeating ("CreateObstacle", 1f, 1.5f);
+				}
+		}
 	
 	// Update is called once per frame
 	void OnGUI () 
 	{
-		if (BirdStarter.birdEnabled == true) {
-						GUI.color = Color.black;
-						GUILayout.Label (" Score: " + score.ToString ());
-				} else
-						return;
+		if (BirdStarter.birdEnabled == true)
+		{
+			GUI.color = Color.black;
+			GUILayout.Label (" Score: " + score.ToString ());
+		} 
 		}
 	
 	void CreateObstacle()

@@ -16,7 +16,7 @@ public class BirdStarter : MonoBehaviour {
 			if (!birdEnabled)
 			{
 				GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
-				CameraManager.SelectCamera (5);
+				CameraManager.SelectCamera (6);
 				birdEnabled = true;
 			}
 		}
