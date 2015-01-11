@@ -25,6 +25,9 @@ public class hud : MonoBehaviour {
 	public static string whatitem;
 	public static bool showinfo;
 
+	public static string message;
+	public static bool showmessage;
+
 	public Texture line;
 	private int boxWidth= 140;
 	private int boxPosition= 0;
@@ -53,6 +56,9 @@ public class hud : MonoBehaviour {
 
 	void Update(){
 		hud.barDisplay = Time.time*10;
+		if (showmessage) {
+			StartCoroutine(wait());
+				}
 		if(Input.GetKey(KeyCode.U) && UVIn==true && Time.time > nextSwitch){
 			if(licznik==0){
 				addUV();
@@ -79,13 +85,11 @@ public class hud : MonoBehaviour {
 
 	void OnGUI(){	
 		GUI.Box(new Rect(boxPosition,Screen.height-100,Screen.width,100), myBoxTexture);
-		//GUI.Label (new Rect(Screen.width/2-80,Screen.height-120,190,20),"pragnienie");
 
 		GUI.Box(new Rect(Screen.width/2-120,Screen.height-120,240,20), myBoxTexture);
 
 	
 		if (thirst- barDisplay > 5) {
-			//GUI.Box (new Rect (Screen.width / 2 - 120, Screen.height - 120, thirst - barDisplay, 20), water);
 			GUI.DrawTexture(new Rect (Screen.width / 2 - 120, Screen.height - 120, thirst - barDisplay, 20), water, ScaleMode.StretchToFill, true, 0);
 				} else {
 			//TUTAJ GAME OVER !!!
@@ -107,12 +111,21 @@ public class hud : MonoBehaviour {
 		{
 		GUI.Label (new Rect(Screen.width/2,Screen.height-200,210,80),"Wcisnij klawisz 'E' by podniesc "+whatitem);
 		}
+		if (showmessage) {
+			GUI.Label (new Rect(Screen.width/2,Screen.height-200,210,80),message);
+				}
 
 	}
 
 	public static void showText(string txt){
 		hud.showinfo = true;
 		hud.whatitem = txt;
+		}
+
+	IEnumerator wait(){
+		showmessage=true;
+		yield return new WaitForSeconds (3.0f);
+		showmessage=false;
 		}
 
 	public static bool exists(string s){
@@ -127,8 +140,9 @@ public class hud : MonoBehaviour {
 			LatarkaIn=true;
 		}
 	}
-	public static void showMessage(string txt){
-		
+	public static void displayMessage(string txt){
+		showmessage = true;
+		message = txt;
 	}
 	public static void drink(){
 		if (thirst-barDisplay + 20 < 240) {

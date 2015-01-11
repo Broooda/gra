@@ -33,6 +33,7 @@ public class Fridge : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject.tag=="Player"){
 			param=true;
+			hud.displayMessage("Nacisnij E by uzyc Lodowka");
 		}
 	}
 	void OnTriggerExit(){
