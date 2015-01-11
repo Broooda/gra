@@ -34,7 +34,9 @@ public class hud : MonoBehaviour {
 	private static Hashtable allitems = new Hashtable();
 	private static Hashtable myitems = new Hashtable();
 	private float nextSwitch;
-	private int licznik = 0;
+	private bool UVOn = false;
+    private bool LatarkaOn = false;
+    private Vector3 fwd;
 
 	void Start(){
 		allitems.Add ("Zielony klucz", zielony_klucz);
@@ -52,6 +54,7 @@ public class hud : MonoBehaviour {
 		myitems.Add ("Srebrny klucz", srebrny_klucz);
 
 		thirst = 190;
+        fwd = new Vector3();
 	}
 
 	void Update(){
@@ -60,25 +63,44 @@ public class hud : MonoBehaviour {
 			StartCoroutine(wait());
 				}
 		if(Input.GetKey(KeyCode.U) && UVIn==true && Time.time > nextSwitch){
-			if(licznik==0){
+            if (!UVOn && !LatarkaOn)
+            {
 				addUV();
-				licznik++;
+                UVOn = true; ;
 			}
+            else if (!UVOn && LatarkaOn)
+            {
+                addUV();
+                UVOn = true;
+
+                GameObject.Destroy(latarkalocal);
+                LatarkaOn = false;
+            }
 			else{
-				licznik=0;
+                UVOn = false;
 				GameObject.Destroy(uvlocal);
 			}
 			nextSwitch=Time.time+0.2f;
 		}
 		if(Input.GetKey(KeyCode.F) && LatarkaIn==true && Time.time > nextSwitch){
-			if(licznik==0){
-				addFlashlight();
-				licznik++;
-			}
-			else{
-				licznik=0;
-				GameObject.Destroy(latarkalocal);
-			}
+            if (!LatarkaOn && !UVOn)
+            {
+                addFlashlight();
+                LatarkaOn = true; ;
+            }
+            else if (!LatarkaOn && UVOn)
+            {
+                addFlashlight();
+                LatarkaOn = true;
+
+                GameObject.Destroy(uvlocal);
+                UVOn = false;
+            }
+            else
+            {
+                LatarkaOn = false;
+                GameObject.Destroy(latarkalocal);
+            }
 			nextSwitch=Time.time+0.2f;
 		}
 	}
@@ -109,11 +131,12 @@ public class hud : MonoBehaviour {
 		}
 		if(showinfo)
 		{
-		GUI.Label (new Rect(Screen.width/2,Screen.height-200,210,80),"Wcisnij klawisz 'E' by podniesc "+whatitem);
+		    GUI.Label (new Rect(Screen.width/2,Screen.height-200,210,80),"Wcisnij klawisz 'E' by podniesc "+whatitem);
 		}
-		if (showmessage) {
+		if (showmessage)
+        {
 			GUI.Label (new Rect(Screen.width/2,Screen.height-200,210,80),message);
-				}
+		}
 
 	}
 
@@ -150,7 +173,6 @@ public class hud : MonoBehaviour {
 				}
 	}
 	public void addUV(){
-		Vector3 fwd = new Vector3 ();
 		fwd.Set (1.1f, 0f,0f);
 		fwd += transform.position;
 		uvlocal= Instantiate(uvobject,fwd,transform.rotation) as GameObject;
@@ -159,7 +181,6 @@ public class hud : MonoBehaviour {
 		UVTrigger.On ();
 	}
 	public void addFlashlight(){
-		Vector3 fwd = new Vector3 ();
 		fwd.Set (1.1f, 0f,0f);
 		fwd += transform.position;
 		latarkalocal= Instantiate(latarkaobject,fwd,transform.rotation) as GameObject;

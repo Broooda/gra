@@ -20,6 +20,7 @@ public class keyPad : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject.tag=="Player"){
 			param=true;
+            hud.displayMessage("Nacisnij E by wpisać KOD");
 		}
 	}
 	void OnTriggerExit(){

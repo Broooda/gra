@@ -5,8 +5,8 @@ public class UVTrigger : MonoBehaviour {
 
 	public static bool isOn;
 	private Light flashlight;
-	public float on = 3f;
-	public float off = 0.0f;
+	public float on;
+	public float off;
 
     private float nextSwitch;
 	// Use this for initialization

@@ -24,6 +24,7 @@ public class ShooterStarter : MonoBehaviour
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject.tag=="Player"){
 			param=true;
+            hud.displayMessage("Nacisnij E by rozpocząć: minigra");
 		}
 	}
 	void OnTriggerExit(){

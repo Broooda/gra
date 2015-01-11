@@ -3,8 +3,8 @@ using System.Collections;
 
 public class LatarkaTrigger : MonoBehaviour
 {
-    public float highIntensity = 3f;
-    public float lowIntensity = 0.0f;
+    public float highIntensity;
+    public float lowIntensity;
     public float switchingRate;
 	public static bool latarkaOn;
 
