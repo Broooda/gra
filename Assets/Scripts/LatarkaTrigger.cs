@@ -6,20 +6,26 @@ public class LatarkaTrigger : MonoBehaviour
     public float highIntensity = 3f;
     public float lowIntensity = 0.0f;
     public float switchingRate;
+	public static bool latarkaOn;
 
     private bool param = false;
     private bool latarkaIsOn = false;
     private Light latarka;
     private float nextSwitch;
 
-    void Awake()
+    void Start()
     {
         latarka = transform.Find("latarka_body").light;
+		latarka.intensity=lowIntensity;
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.F) && param == true && Time.time > nextSwitch)
+		if(latarkaOn==true){
+			latarka.intensity=highIntensity;
+			latarkaOn=false;
+		}
+        /*if (Input.GetKey(KeyCode.F) && param == true && Time.time > nextSwitch)
         {
             if (latarka.intensity == lowIntensity)
             {
@@ -31,9 +37,10 @@ public class LatarkaTrigger : MonoBehaviour
                 latarka.intensity = lowIntensity;
                 nextSwitch = Time.time + switchingRate;
             }
-        }
+        }*/
+
     }
-    void OnTriggerEnter(Collider col)
+    /*void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
@@ -43,5 +50,8 @@ public class LatarkaTrigger : MonoBehaviour
     void OnTriggerExit()
     {
         param = false;
-    }
+    }*/
+	public static void On(){
+		latarkaOn = true;
+	}
 }

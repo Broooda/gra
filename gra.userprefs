@@ -1,10 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CrappyBird\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\hud.cs">
     <Files>
-      <File FileName="Assets\CrappyBird\Scripts\Generate.cs" Line="18" Column="43" />
-      <File FileName="Assets\CrappyBird\Scripts\Obstacle.cs" Line="17" Column="2" />
-      <File FileName="Assets\CrappyBird\Scripts\Player.cs" Line="40" Column="2" />
+      <File FileName="Assets\Scripts\hud.cs" Line="127" Column="19" />
+      <File FileName="Assets\Scripts\LatarkaTrigger.cs" Line="58" Column="1" />
+      <File FileName="Assets\Scripts\UVTrigger.cs" Line="20" Column="3" />
+      <File FileName="Assets\Scripts\PickUpObject.cs" Line="25" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
