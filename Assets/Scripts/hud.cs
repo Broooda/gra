@@ -12,6 +12,9 @@ public class hud : MonoBehaviour {
 	public Texture latarka;
 	public Texture latarkauv;
 
+	public static string whatitem;
+	public static bool showinfo;
+
 	public Texture line;
 	private int boxWidth= 140;
 	private int boxPosition= 0;
@@ -26,10 +29,15 @@ public class hud : MonoBehaviour {
 		allitems.Add ("Srebrny klucz", srebrny_klucz);
 		allitems.Add ("Latarka", latarka);
 		allitems.Add ("UV", latarkauv);
+
+		myitems.Add ("Zielony klucz", zielony_klucz);
+		myitems.Add ("Niebieski klucz", niebieski_klucz);
+		myitems.Add ("Czerwony klucz", czerwony_klucz);
+		myitems.Add ("Zloty klucz", zloty_klucz);
+		myitems.Add ("Srebrny klucz", srebrny_klucz);
 	}
 
 	void OnGUI(){	
-
 		GUI.Box(new Rect(boxPosition,Screen.height-100,Screen.width,100), myBoxTexture);
 		int iter = 0;
 		foreach(DictionaryEntry entry in myitems){
@@ -39,8 +47,20 @@ public class hud : MonoBehaviour {
 			GUI.DrawTexture(new Rect((boxPosition+(iter*boxWidth))+boxWidth,Screen.height-100,6,100), line);
 			iter = iter+1;
 		}
+		if(showinfo)
+		{
+		GUI.Label (new Rect(Screen.width/2,Screen.height-200,210,80),"Wcisnij klawisz 'E' by podniesc "+whatitem);
+		}
 	}
 
+	public static void showText(string txt){
+		hud.showinfo = true;
+		hud.whatitem = txt;
+		}
+
+	public static bool exists(string s){
+		return myitems.ContainsKey (s);
+	}
 	public static void addItem(string s){
 		myitems.Add (s, allitems[s]);
 	}

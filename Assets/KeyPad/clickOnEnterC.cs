@@ -14,6 +14,7 @@ public class clickOnEnterC : MonoBehaviour {
 						if (text.text == "5691") {
 								text.color = Color.green;
 								audio.Play();
+								keyPad.ok=true;
 						} else {
 								text.color = Color.red;
 								wrong.Play();

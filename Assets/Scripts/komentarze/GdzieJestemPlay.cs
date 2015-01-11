@@ -51,30 +51,37 @@ public class GdzieJestemPlay : MonoBehaviour
     {
         if (other.tag == "GreenK")
         {
+			hud.showText("Zielony klucz");
             greenKey.Play();
         }
         if (other.tag == "RedK")
         {
+			hud.showText("Czerwony klucz");
             redKey.Play();
         }
         if (other.tag == "GoldK")
         {
+			hud.showText("Zloty klucz");
             goldKey.Play();
         }
         if (other.tag == "SilverK")
         {
+			hud.showText("Srebrny klucz");
             silverKey.Play();
         }
         if (other.tag == "BlueK")
         {
+			hud.showText("Niebieski klucz");
             blueKey.Play();
         }
         if (other.tag == "Latarka")
         {
+			hud.showText("Latarka");
             latarka.Play();
         }
         if (other.tag == "UV")
         {
+			hud.showText("Latarka UV");
             UV.Play();
         }
         if (other.tag == "Fridge")
@@ -90,4 +97,7 @@ public class GdzieJestemPlay : MonoBehaviour
             torrentino.Play();
         }
     }
+	void OnTriggerExit(){
+		hud.showinfo = false;
+	}
 }
