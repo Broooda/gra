@@ -47,11 +47,11 @@ public class hud : MonoBehaviour {
 		allitems.Add ("latarka", latarka);
 		allitems.Add ("UV", latarkauv);
 
-		//myitems.Add ("Zielony klucz", zielony_klucz);
-		//myitems.Add ("Niebieski klucz", niebieski_klucz);
-		//myitems.Add ("Czerwony klucz", czerwony_klucz);
-		//myitems.Add ("Zloty klucz", zloty_klucz);
-		//myitems.Add ("Srebrny klucz", srebrny_klucz);
+		myitems.Add ("Zielony klucz", zielony_klucz);
+		myitems.Add ("Niebieski klucz", niebieski_klucz);
+		myitems.Add ("Czerwony klucz", czerwony_klucz);
+		myitems.Add ("Zloty klucz", zloty_klucz);
+		myitems.Add ("Srebrny klucz", srebrny_klucz);
 
 		thirst = 190;
         fwd = new Vector3();

@@ -4,35 +4,32 @@ public class Generate : MonoBehaviour
 {
 	public GameObject rocks;
 	public GameObject water;
-	int score = 0;
-	bool once = false;
-
-
-
-
-
-
-
+	public static int score = 0;
+	private bool once = false;
+	// Use this for initialization
+	void Start()
+	{
+		//InvokeRepeating ("CreateObstacle", 1f, 1.5f);
+				
+	}
 	void Update()
-	{	
-				if (BirdStarter.birdEnabled == true) {
-						InvokeRepeating ("CreateObstacle", 1f, 1.5f);
+	{
+		if (started ()) {
+						CreateObstacle ();
 				}
 		}
-	
+
 	// Update is called once per frame
-	void OnGUI () 
+	/*void OnGUI () 
 	{
-		if (BirdStarter.birdEnabled == true)
-		{
-			GUI.color = Color.black;
-			GUILayout.Label (" Score: " + score.ToString ());
-		} 
-		}
-	
+				//if (BirdStarter.gameIsEnabled == true) {
+						GUI.color = Color.black;
+						GUILayout.Label (" Score: " + score.ToString ());
+				//}
+		}*/
 	void CreateObstacle()
 	{
-		if (score < 5) {
+		if (score < 10) {
 						Instantiate (rocks);
 						score++;
 				} else if (once == false) {
@@ -42,5 +39,16 @@ public class Generate : MonoBehaviour
 
 				}
 	}
-	
+	bool started()
+	{
+		if (BirdStarter.gameIsEnabled == true && Input.GetKeyUp ("space")) 
+		{
+			return true;
+
+		} else {
+			return false;
+		}
+	}
+
+
 }
