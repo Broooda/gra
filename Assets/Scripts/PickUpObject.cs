@@ -12,25 +12,31 @@ public class PickUpObject : MonoBehaviour {
 	}
 	void Update(){
 		if (Input.GetKeyDown(KeyCode.E) && param==true) {
-			hud.addItem(name);
-            hud.showinfo = false;
-			Destroy(gameObject);
-            if (name.Equals("UV"))
-            {
-                button = "U";
-				flash=true;
-            }
-            else if (name.Equals("latarka"))
-            {
-                button = "F";
-				flash=true;
-            }
-			else{
-				hud.key();
+			if(name.Equals("szklanka")){
+				hud.drink();
+				Destroy(gameObject);
 			}
-			if(flash){
-            hud.displayMessage("Aby użyć: " + name + " wciśnij " + button);
-				flash=false;
+			else{
+				hud.addItem(name);
+				hud.showinfo = false;
+				Destroy(gameObject);
+				if (name.Equals("UV"))
+				{
+					button = "U";
+					flash=true;
+				}
+				else if (name.Equals("latarka"))
+				{
+					button = "F";
+					flash=true;
+				}
+				else{
+					hud.key();
+				}
+				if(flash){
+					hud.displayMessage("Aby użyć: " + name + " wciśnij " + button);
+					flash=false;
+				}
 			}
 		}
 	}
@@ -43,3 +49,4 @@ public class PickUpObject : MonoBehaviour {
 		param=false;
 	}
 }
+

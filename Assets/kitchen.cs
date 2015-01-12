@@ -5,10 +5,11 @@ public class kitchen : MonoBehaviour {
 	private bool param=false;
 	private bool doorIsOpen=false;
 	public int speedOpen=100;
-	public AudioSource closed;
+	public AudioClip closed;
 	private bool firstOpen=true;
 	private bool firstClose=true;
 	public AudioClip doorSound;
+	private bool first=true;
 	
 	void Update(){
 		if (Input.GetKey (KeyCode.E) && param == true && hud.exists ("Niebieski klucz")) {
@@ -21,8 +22,11 @@ public class kitchen : MonoBehaviour {
 				transform.FindChild ("body").Rotate (Vector3.up * 0.04f * speedOpen);
 			}
 		}
-		if (Input.GetKey (KeyCode.E) && param == true && !hud.exists ("Zielony klucz")) {
-			closed.Play ();
+		if (Input.GetKey (KeyCode.E) && param == true && !hud.exists ("Niebieski klucz")) {
+			if(first){
+				audio.PlayOneShot(closed);
+				first=false;
+			}
 		}
 		if(doorIsOpen){
 			if(transform.FindChild("body").localEulerAngles.y > 2){
@@ -46,5 +50,6 @@ public class kitchen : MonoBehaviour {
 	void OnTriggerExit(){
 		doorIsOpen = true;
 		param = false;
+		first = true;
 	}
 }

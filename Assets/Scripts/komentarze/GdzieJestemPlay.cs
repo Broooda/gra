@@ -82,7 +82,7 @@ public class GdzieJestemPlay : MonoBehaviour
             redKey.Play();
             playedOnce2 = true;
         }
-        if (other.tag == "GoldK" && !playedOnce3)
+        if (other.tag == "GoldK" && !playedOnce3 && tarantinoCode.codeOk)
         {
 			hud.showText("Zloty klucz");
             goldKey.Play();

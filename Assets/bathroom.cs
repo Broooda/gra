@@ -5,19 +5,36 @@ public class bathroom : MonoBehaviour {
 	private bool param=false;
 	private bool doorIsOpen=false;
 	public int speedOpen=100;
-	public AudioSource closed;
+	public AudioClip closed;
+	private bool firstOpen=true;
+	private bool firstClose=true;
+	public AudioClip doorSound;
+	private bool first=true;
 	
 	void Update(){
 		if (Input.GetKey (KeyCode.E) && param == true && hud.exists ("Czerwony klucz")) {
 			if (transform.FindChild ("body").localEulerAngles.y < 90.0f) {
+				if(firstOpen){
+					firstClose=true;
+					audio.PlayOneShot(doorSound);
+					firstOpen=false;
+				}
 				transform.FindChild ("body").Rotate (Vector3.up * 0.04f * speedOpen);
 			}
 		}
 		if (Input.GetKey (KeyCode.E) && param == true && !hud.exists ("Czerwony klucz")) {
-			closed.Play ();
+			if(first){
+				audio.PlayOneShot(closed);
+				first=false;
+			}
 		}
 		if(doorIsOpen){
 			if(transform.FindChild("body").localEulerAngles.y > 2){
+				if(firstClose){
+					firstOpen=true;
+					audio.PlayOneShot(doorSound);
+					firstClose=false;
+				}
 				transform.FindChild("body").Rotate(Vector3.down*0.02f*speedOpen);
 			}
 			else{
@@ -33,5 +50,6 @@ public class bathroom : MonoBehaviour {
 	void OnTriggerExit(){
 		doorIsOpen = true;
 		param = false;
+		first = true;
 	}
 }
