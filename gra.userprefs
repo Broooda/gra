@@ -1,15 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PickUpObject.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TigerRoom.cs">
     <Files>
-      <File FileName="Assets\CrappyBird\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\hud.cs" Line="157" Column="28" />
-      <File FileName="Assets\Scripts\UVTrigger.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PickUpObject.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Fridge.cs" Line="1" Column="1" />
-      <File FileName="Assets\spaceShooter\Scripts\GameController.cs" Line="39" Column="42" />
-      <File FileName="Assets\CrappyBird\Scripts\Generate.cs" Line="14" Column="1" />
-      <File FileName="Assets\Scripts\komentarze\GdzieJestemPlay.cs" Line="77" Column="10" />
+      <File FileName="Assets\bedroom.cs" Line="38" Column="1" />
+      <File FileName="Assets\Scripts\TigerRoom.cs" Line="46" Column="43" />
+      <File FileName="Assets\garage.cs" Line="38" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

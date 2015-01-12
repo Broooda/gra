@@ -5,7 +5,9 @@ public class TigerRoom : MonoBehaviour {
 	
 	private bool doorIsOpen=false;
 	private bool param=false;
+	private bool firstOpen = true;
 	public AudioClip TigerVoice;
+	public AudioClip Comment;
 	int speedOpen=100;
 	void Update(){
 		if (Input.GetKey(KeyCode.E) && param==true) {
@@ -40,6 +42,11 @@ public class TigerRoom : MonoBehaviour {
 		Tiger();
 		yield return new WaitForSeconds (0.2f);
 		doorIsOpen=true;
+		if(firstOpen==true){
+			yield return new WaitForSeconds (1.2f);
+			audio.PlayOneShot(Comment);
+			firstOpen=false;
+		}
 	}
 
 }

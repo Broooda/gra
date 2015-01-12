@@ -14,7 +14,7 @@ public class bedroom : MonoBehaviour {
 						}
 				}
 		if (Input.GetKey (KeyCode.E) && param == true && !hud.exists ("Zielony klucz")) {
-						closed.Play ();
+						closed.Play();
 				}
 		if(doorIsOpen){
 			if(transform.FindChild("body").localEulerAngles.y > 2){

@@ -7,7 +7,6 @@ public class EnteronClickc : MonoBehaviour {
 	
 	void OnMouseOver() {
 		if (Input.GetMouseButtonDown (0)) {
-			Debug.Log ("tarra");
 			if(text.text == "tarantino"){
 				text.color = Color.green;
 				tarantinoCode.codeOk = true;
