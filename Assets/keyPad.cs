@@ -5,6 +5,8 @@ public class keyPad : MonoBehaviour {
 	private bool param=false;
 	public static bool ok=false;
 	private bool opened=false;
+	private bool firstOpen=true;
+	public AudioClip doorSound;
 	
 	void Update(){
 		if (Input.GetKey(KeyCode.E) && param==true && ok==false) {
@@ -12,6 +14,10 @@ public class keyPad : MonoBehaviour {
 			CameraManager.SelectCamera (3);
 		}
 		if (param == true && ok == true && opened==false) {
+				if(firstOpen){
+					firstOpen=false;
+					audio.PlayOneShot(doorSound);
+				}
 				transform.parent.Rotate (Vector3.up * 1 * 90);
 				opened=true;
 				}
