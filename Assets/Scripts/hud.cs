@@ -173,7 +173,7 @@ public class hud : MonoBehaviour {
 				}
 	}
 	public void addUV(){
-		fwd.Set (1.1f, 0f,0f);
+		fwd.Set (0f, 0f,0f);
 		fwd += transform.position;
 		uvlocal= Instantiate(uvobject,fwd,transform.rotation) as GameObject;
 		Transform t = uvlocal.transform;
@@ -181,7 +181,7 @@ public class hud : MonoBehaviour {
 		UVTrigger.On ();
 	}
 	public void addFlashlight(){
-		fwd.Set (1.1f, 0f,0f);
+		fwd.Set (0f, 0f,0f);
 		fwd += transform.position;
 		latarkalocal= Instantiate(latarkaobject,fwd,transform.rotation) as GameObject;
 		Transform t = latarkalocal.transform;
