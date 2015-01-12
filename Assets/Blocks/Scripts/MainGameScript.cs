@@ -21,5 +21,8 @@ public class MainGameScript : MonoBehaviour {
 		CameraManager.SelectCamera (0);
 		GameObject.Find ("First Person Controller").SendMessage ("SetControllable", true);
 		winText.text = "";
+		HexagonScript.gameOver = true;
+		CircleScript.gameOver = true;
+		SquareScript.gameOver = true;
 	}
 }

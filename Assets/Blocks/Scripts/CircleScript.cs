@@ -15,6 +15,7 @@ public class CircleScript : MonoBehaviour {
 	public AudioClip off;
 	Sprite select;
 	Sprite unselect;
+	public static bool gameOver=false;
 
 	void Start(){
 		if(!end){
@@ -66,7 +67,7 @@ public class CircleScript : MonoBehaviour {
 	}
 	void Update(){
 		if(!end){
-			if(isChosen){
+			if(isChosen && !gameOver){
 				if(Input.GetKey(KeyCode.A)) {
 					transform.Rotate (0,0, 1);
 				}

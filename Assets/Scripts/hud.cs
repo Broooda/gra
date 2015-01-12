@@ -37,6 +37,7 @@ public class hud : MonoBehaviour {
 	private bool UVOn = false;
     private bool LatarkaOn = false;
     private Vector3 fwd;
+	public AudioClip flashlightSound;
 
 	void Start(){
 		allitems.Add ("Zielony klucz", zielony_klucz);
@@ -100,6 +101,7 @@ public class hud : MonoBehaviour {
             {
                 LatarkaOn = false;
                 GameObject.Destroy(latarkalocal);
+				audio.PlayOneShot(flashlightSound);
             }
 			nextSwitch=Time.time+0.2f;
 		}
@@ -173,19 +175,23 @@ public class hud : MonoBehaviour {
 				}
 	}
 	public void addUV(){
-		fwd.Set (0f, 0f,0f);
-		fwd += transform.position;
-		uvlocal= Instantiate(uvobject,fwd,transform.rotation) as GameObject;
+		//fwd.Set (0f, 0f,0f);
+		//fwd += transform.position;
+		uvlocal= Instantiate(uvobject,transform.position-transform.forward,transform.rotation) as GameObject;
 		Transform t = uvlocal.transform;
 		t.parent = transform;
 		UVTrigger.On ();
+		audio.PlayOneShot(flashlightSound);
+		uvlocal.collider.enabled = false;
 	}
 	public void addFlashlight(){
-		fwd.Set (0f, 0f,0f);
-		fwd += transform.position;
-		latarkalocal= Instantiate(latarkaobject,fwd,transform.rotation) as GameObject;
+		//fwd.Set (0f, 0f,0f);
+		//fwd += transform.position;
+		latarkalocal= Instantiate(latarkaobject,transform.position-transform.forward,transform.rotation) as GameObject;
 		Transform t = latarkalocal.transform;
 		t.parent = transform;
 		LatarkaTrigger.On ();
+		audio.PlayOneShot(flashlightSound);
+		latarkalocal.collider.enabled = false;
 	}
 }
