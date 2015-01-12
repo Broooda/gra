@@ -9,12 +9,5 @@ public class onStartClick : MonoBehaviour {
 		menu.enabled = true;
 		loading.enabled = false;
 	}
-	void OnMouseOver () {
-		if(Input.GetMouseButtonDown(0))
-		{
-			menu.enabled = false;
-			loading.enabled = true;
-			Application.LoadLevel ("main"); 
-		}
-	}
+
 }

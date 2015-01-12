@@ -18,6 +18,8 @@ public class hud : MonoBehaviour {
 	public GameObject latarkaobject;
 	private GameObject latarkalocal;
 	private static bool LatarkaIn;
+	public  AudioClip keySound;
+	public static bool playKey;
 
 	public static float barDisplay;
 	public static float thirst;
@@ -49,17 +51,22 @@ public class hud : MonoBehaviour {
 		allitems.Add ("UV", latarkauv);
 
 		myitems.Add ("Zielony klucz", zielony_klucz);
-		myitems.Add ("Niebieski klucz", niebieski_klucz);
-		myitems.Add ("Czerwony klucz", czerwony_klucz);
-		myitems.Add ("Zloty klucz", zloty_klucz);
-		myitems.Add ("Srebrny klucz", srebrny_klucz);
+		//myitems.Add ("Niebieski klucz", niebieski_klucz);
+		//myitems.Add ("Czerwony klucz", czerwony_klucz);
+		//myitems.Add ("Zloty klucz", zloty_klucz);
+		//myitems.Add ("Srebrny klucz", srebrny_klucz);
 
 		thirst = 190;
         fwd = new Vector3();
 	}
+	
 
 	void Update(){
 		hud.barDisplay = Time.time*10;
+		if (playKey) {
+						audio.PlayOneShot (keySound);
+			playKey=false;
+				}
 		if (showmessage) {
 			StartCoroutine(wait());
 				}
@@ -142,6 +149,9 @@ public class hud : MonoBehaviour {
 
 	}
 
+	public static void key(){
+		playKey = true;
+	}
 	public static void showText(string txt){
 		hud.showinfo = true;
 		hud.whatitem = txt;

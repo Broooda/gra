@@ -4,6 +4,7 @@ using System.Collections;
 public class tarantinoCode : MonoBehaviour {
 	private bool param=false;
 	public static bool codeOk = false;
+	public  AudioClip openSound;
 	
 	void Update(){
 		if (Input.GetKey(KeyCode.E) && param==true) {
@@ -14,6 +15,7 @@ public class tarantinoCode : MonoBehaviour {
 			else{
 				if(transform.FindChild("Capsule02").localEulerAngles.z > 290.0f ){
 					transform.FindChild("Capsule02").Rotate(Vector3.back*0.04f*70);
+					audio.PlayOneShot(openSound);
 				}
 			}
 		}

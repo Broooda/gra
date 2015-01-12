@@ -5,6 +5,8 @@ public class PickUpObject : MonoBehaviour {
 	private string name;
 	private bool param=false;
     private string button;
+	private bool flash=false;
+
 	void Start(){
 		name=gameObject.transform.name;
 	}
@@ -16,12 +18,20 @@ public class PickUpObject : MonoBehaviour {
             if (name.Equals("UV"))
             {
                 button = "U";
+				flash=true;
             }
             else if (name.Equals("latarka"))
             {
                 button = "F";
+				flash=true;
             }
+			else{
+				hud.key();
+			}
+			if(flash){
             hud.displayMessage("Aby użyć: " + name + " wciśnij " + button);
+				flash=false;
+			}
 		}
 	}
 	void OnTriggerEnter(Collider col){

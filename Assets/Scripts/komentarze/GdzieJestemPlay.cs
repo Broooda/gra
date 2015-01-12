@@ -37,6 +37,7 @@ public class GdzieJestemPlay : MonoBehaviour
 
     private AudioSource torrentino;
     private bool playedOnce10 = false;
+	
 
 
 
