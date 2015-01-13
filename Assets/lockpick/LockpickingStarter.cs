@@ -5,6 +5,7 @@ public class LockpickingStarter : MonoBehaviour
 {
 	private bool param;
 	public static bool lockpickIsEnabled;
+	public AudioClip pick;
 	// Use this for initialization
 	void Start () {
 		param = false;
@@ -30,6 +31,8 @@ public class LockpickingStarter : MonoBehaviour
 			lockpickIsEnabled = false;
 			GameObject.Find("First Person Controller").SendMessage("SetControllable",true);
 			CameraManager.SelectCamera (0);
+			hud.addItem("Srebrny klucz");
+			audio.PlayOneShot(pick);
 		}
 	}
 	void OnTriggerEnter(Collider col){

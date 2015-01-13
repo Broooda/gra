@@ -50,7 +50,7 @@ public class hud : MonoBehaviour {
 		allitems.Add ("latarka", latarka);
 		allitems.Add ("UV", latarkauv);
 
-		myitems.Add ("Zielony klucz", zielony_klucz);
+		//myitems.Add ("Zielony klucz", zielony_klucz);
 		//myitems.Add ("Niebieski klucz", niebieski_klucz);
 		//myitems.Add ("Czerwony klucz", czerwony_klucz);
 		//myitems.Add ("Zloty klucz", zloty_klucz);
@@ -62,7 +62,7 @@ public class hud : MonoBehaviour {
 	
 
 	void Update(){
-		hud.barDisplay = Time.time*10;
+		hud.barDisplay = Time.time;
 		if (playKey) {
 						audio.PlayOneShot (keySound);
 			playKey=false;

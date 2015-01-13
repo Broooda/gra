@@ -11,7 +11,7 @@ public class clickOnEnterC : MonoBehaviour {
 	
 	void OnMouseOver() {
 				if (Input.GetMouseButtonDown (0)) {
-						if (text.text == "5691") {
+						if (text.text == "2437") {
 								text.color = Color.green;
 								audio.Play();
 								keyPad.ok=true;
