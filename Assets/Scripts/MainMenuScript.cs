@@ -12,8 +12,7 @@ public class MainMenuScript : MonoBehaviour {
 	private float _gameFOV = 60.0f;
 	private bool loading = false;
 	public Camera gameCamera;
-	
-	
+	public Texture load;
 	
 	
 	// Use this for initialization
@@ -74,7 +73,9 @@ public class MainMenuScript : MonoBehaviour {
 		}
 		if (loading == true)
 		{
+			//CameraManager.SelectCamera (7);
 			GUI.Box(new Rect(Screen.width/2-Screen.width/4,Screen.height/2-Screen.height/4,Screen.width/2,Screen.height/2),"");
+			//GUI.DrawTexture(new Rect(10,10,100,100),load,ScaleMode.ScaleToFit,true, 10.0f);
 			GUI.Label(new Rect(Screen.width/2-30,Screen.height/2 ,100,25),"ŁADOWANIE");
 		}
 

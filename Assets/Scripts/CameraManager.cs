@@ -11,10 +11,12 @@ public class CameraManager : MonoBehaviour {
 	public GameObject cam5;
 	public GameObject cam6;
 	public GameObject cam7;
+	public GameObject cam8;
+	public GameObject cam9;
 
 	// Use this for initialization
 	void Start () {
-		cameras = new GameObject[7];
+		cameras = new GameObject[9];
 		cameras [0] = cam1;
 		cameras [1] = cam2;
 		cameras [2] = cam3;
@@ -22,6 +24,8 @@ public class CameraManager : MonoBehaviour {
 		cameras [4] = cam5;
 		cameras [5] = cam6;
 		cameras [6] = cam7;
+		cameras [7] = cam8; //winCamera
+		cameras [8] = cam9; //loseCamera
 		
         for (int i = 1; i < cameras.Length; i++) //na poczatku wylacza wszsytkie kamery oprocz glownej
         {

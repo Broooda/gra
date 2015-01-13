@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 	{
 				if (BirdStarter.gameIsEnabled == true) {
 						if (coll.gameObject.tag == "Finish") {
-				Die();
+				CameraManager.SelectCamera(7);
 						} else
 				Die ();
 				}
