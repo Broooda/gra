@@ -20,9 +20,12 @@ public class hud : MonoBehaviour {
 	private static bool LatarkaIn;
 	public  AudioClip keySound;
 	public static bool playKey;
+	public static bool playDrink;
 
 	public static float barDisplay;
 	public static float thirst;
+
+	public AudioClip drinkSound;
 
 	public static string whatitem;
 	public static bool showinfo;
@@ -67,6 +70,10 @@ public class hud : MonoBehaviour {
 						audio.PlayOneShot (keySound);
 			playKey=false;
 				}
+		if (playDrink) {
+			audio.PlayOneShot (drinkSound);
+			playDrink=false;
+		}
 		if (showmessage) {
 			StartCoroutine(wait());
 				}
@@ -154,6 +161,10 @@ public class hud : MonoBehaviour {
 		hud.whatitem = txt;
 		}
 
+	public static void pdrink(){
+		playDrink = true;
+	}
+
 	IEnumerator wait(){
 		showmessage=true;
 		yield return new WaitForSeconds (3.0f);
@@ -179,6 +190,8 @@ public class hud : MonoBehaviour {
 	public static void drink(){
 		if (thirst-barDisplay + 20 < 240) {
 						thirst += 20;
+		
+						
 				}
 	}
 	public void addUV(){

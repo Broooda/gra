@@ -14,6 +14,7 @@ public class PickUpObject : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.E) && param==true) {
 			if(name.Equals("szklanka")){
 				hud.drink();
+				hud.pdrink();
 				Destroy(gameObject);
 			}
 			else{
