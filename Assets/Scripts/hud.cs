@@ -123,10 +123,7 @@ public class hud : MonoBehaviour {
 		if (thirst- barDisplay > 5) {
 			GUI.DrawTexture(new Rect (Screen.width / 2 - 120, Screen.height - 120, thirst - barDisplay, 20), water, ScaleMode.StretchToFill, true, 0);
 				} else {
-			//TUTAJ GAME OVER !!!
-			//TUTAJ GAME OVER !!!
-			//TUTAJ GAME OVER !!!
-			//TUTAJ GAME OVER !!!
+			Application.LoadLevel("loss");
 			GUI.Box (new Rect (Screen.width / 2 - 120, Screen.height - 120, 1, 20), water);
 				}
 		GUI.Label (new Rect(Screen.width/2-80,Screen.height-120,190,20),"pragnienie");

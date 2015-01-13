@@ -22,7 +22,7 @@ public class garage : MonoBehaviour {
 				transform.FindChild ("body").Rotate (Vector3.up * 0.04f * speedOpen);
 			}
 		}
-		if (Input.GetKey (KeyCode.E) && param == true && !hud.exists ("Zloty klucz") && !hud.exists ("Srebrny klucz")) {
+		if (Input.GetKey (KeyCode.E) && param == true && !hud.exists ("Zloty klucz") || !hud.exists ("Srebrny klucz")) {
 			if(first){
 				audio.PlayOneShot(closed);
 				first=false;

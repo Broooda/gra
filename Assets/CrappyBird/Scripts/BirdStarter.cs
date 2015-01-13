@@ -13,21 +13,15 @@ public class BirdStarter : MonoBehaviour
 	}
 	void Update(){
 		if (Input.GetKey (KeyCode.E) && param == true) {
-						param = false;
-						if (isFirstTry) {
-								if (!gameIsEnabled) {
-										GameObject.Find ("First Person Controller").SendMessage ("SetControllable", false);
-										CameraManager.SelectCamera (6);
-										gameIsEnabled = true;
-					isFirstTry = false;
-								}
-			} else CameraManager.SelectCamera(7);
-				}
+			param = false;
+			Application.LoadLevel("win");
+						
+		}
 	}
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject.tag=="Player"){
 			param=true;
-			hud.displayMessage("Nacisnij E by rozpocząć: minigra");
+			hud.displayMessage("Nacisnij E by podnieść wodę");
 		}
 	}
 	void OnTriggerExit(){

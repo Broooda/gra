@@ -56,7 +56,7 @@ public class GdzieJestemPlay : MonoBehaviour
         fridge = sounds[8];
         tablet = sounds[9];
         torrentino = sounds[10];
-        
+		StartCoroutine(tip(2));
         wasPlayedOnce = false;
 	}
 
@@ -70,7 +70,7 @@ public class GdzieJestemPlay : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "GreenK" && !playedOnce1)
+        if (other.tag == "GreenK" && !playedOnce1 && MainGameScript.BlockWin)
         {
 			hud.showText("Zielony klucz");
             greenKey.Play();
@@ -130,5 +130,12 @@ public class GdzieJestemPlay : MonoBehaviour
     }
 	void OnTriggerExit(){
 		hud.showinfo = false;
+	}
+	IEnumerator tip(float sec){
+		yield return new WaitForSeconds(sec);
+		hud.displayMessage("Aby uzupełnić pasek pragnienia musisz zbierać kielichy z wodą.");
+		yield return new WaitForSeconds(sec);
+		hud.displayMessage("Jeśli pasek pragnienia spadnie do 0 przegrasz grę! Aby podnieść kielich naciśnij E.");
+		yield return new WaitForSeconds(sec);
 	}
 }
