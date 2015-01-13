@@ -95,10 +95,10 @@ public class GameController : MonoBehaviour
                 yield return new WaitForSeconds(2);
                 text3D.text = "Press 'R' for Restart";
                 restart = true;
-                break;
+                yield break;
             }
         }
-        for (int i = 0; i < waveEnemyShipCount; i++)
+        for (int i = 0; i <= waveEnemyShipCount; i++)
         {
             if (gameOver)
             {
@@ -106,13 +106,16 @@ public class GameController : MonoBehaviour
                 yield return new WaitForSeconds(2);
                 text3D.text = "Press 'R' for Restart";
                 restart = true;
-                break;
+                yield break;
             }
-            Vector3 spawnPosition = new Vector3(Random.RandomRange(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-            spawnPosition += parentObject.transform.position;
-            GameObject local = Instantiate(enemyShip, spawnPosition, enemyShip.transform.rotation) as GameObject;
-            local.transform.parent = parentObject.transform;
-            yield return new WaitForSeconds(waveWait);
+            if (i < waveEnemyShipCount)
+            {
+                Vector3 spawnPosition = new Vector3(Random.RandomRange(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                spawnPosition += parentObject.transform.position;
+                GameObject local = Instantiate(enemyShip, spawnPosition, enemyShip.transform.rotation) as GameObject;
+                local.transform.parent = parentObject.transform;
+                yield return new WaitForSeconds(waveWait);
+            }
         }
         if (!gameOver)
         {
