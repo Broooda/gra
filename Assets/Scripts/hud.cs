@@ -65,6 +65,10 @@ public class hud : MonoBehaviour {
 	
 
 	void Update(){
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.LoadLevel(0);
+        }
 		hud.barDisplay = Time.time;
 		if (playKey) {
 						audio.PlayOneShot (keySound);
@@ -189,7 +193,7 @@ public class hud : MonoBehaviour {
 	}
 	public static void drink(){
 		if (thirst-barDisplay + 20 < 240) {
-						thirst += 20;
+						thirst += 50;
 		
 						
 				}
