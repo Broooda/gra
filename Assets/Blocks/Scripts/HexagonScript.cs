@@ -9,13 +9,16 @@ public class HexagonScript : MonoBehaviour {
 	private Vector3 defaultRot;
 	public static int connection=0;
 	public bool end;
-	private bool check=false;
-	private bool check2=false;
+	private int check=0;
+	private int check2 = 0;
 	public static bool flag;
 	public AudioClip off;
 	Sprite select;
 	Sprite unselect;
 	public static bool gameOver=false;
+	private bool endIsHit=false;
+	private bool hit=false;
+	private GameObject whatIsHit;
 	
 	void Start(){
 		if(!end){
@@ -32,7 +35,8 @@ public class HexagonScript : MonoBehaviour {
 				GetComponent<SpriteRenderer>().sprite = select;
 				transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaultRot, 10);
 				ShowLaser();
-				check2=false;
+				check=0;
+				check2=0;
 			}
 			if(licznik==2){
 				isChosen=false;
@@ -41,9 +45,18 @@ public class HexagonScript : MonoBehaviour {
 			if(licznik==3){
 				GameObject.Destroy(localLaser);
 				this.audio.PlayOneShot(off);
-				if(check==true && check2==false){
+				if(check>check2){
+					if(endIsHit){
+						flag=false;
+						endIsHit=false;
+					}
+					if(whatIsHit!=null){
+						if(whatIsHit.GetComponent<HexagonScript>().IsHit()){
+							whatIsHit.GetComponent<HexagonScript>().NowHit();
+							//ISHIT można jeszcze sprawdzić jakby był jakiś bug
+						}
+					}
 					Subtract();
-					check=false;
 				}
 			}
 			licznik++;
@@ -72,24 +85,43 @@ public class HexagonScript : MonoBehaviour {
 			}
 		}
 	}
-	void Add(){
+	void Add(GameObject id){
+		whatIsHit = id;
 		connection++;
-		check = true;
+		check++;
 	}
 	void Subtract(){
-		connection--;
-		check2 = true;
-	}
-	bool CheckEnd(){
-		return end;
+		whatIsHit = null;
+		if(connection>0){
+			connection--;
+			check2++;
+		}
 	}
 	void SetFlag(){
 		if(end){
-			flag = true;
-			LaserScript.endFlagHexagon=true; 
+			if(!flag){
+				flag = true;
+				LaserScript.nowHexagon=true;
+				LaserScript.endFlagHexagon=true; 
+			}
 		}
 	}
 	void LossFlag(){
-		flag = false;
+		if(flag){
+			if(endIsHit){
+				flag=false;
+				endIsHit=false;
+			}
+		}
+	}
+	void HitEnd(){
+		endIsHit = true;
+	}
+	public bool IsHit(){
+		return hit;
+	}
+	public void NowHit(){
+		if(hit) hit=false;
+		else hit = true;
 	}
 }

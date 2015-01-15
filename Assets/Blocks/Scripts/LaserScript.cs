@@ -16,8 +16,12 @@ public class LaserScript : MonoBehaviour
 	public static bool endFlagCircle=false;
 	public static bool endFlagHexagon=false;
 	public static bool endFlagSquare=false;
+	public static bool nowCircle=false;
+	public static bool nowHexagon=false;
+	public static bool nowSquare=false;
 	public AudioClip on;
 	public AudioClip clash;
+	private GameObject wasHit;
 
 	void Start(){
 		this.audio.PlayOneShot(on);
@@ -75,23 +79,45 @@ public class LaserScript : MonoBehaviour
 	}
 	void WhatIsHit(RaycastHit2D hit){
 		if(counter==1){
-			if(hit.collider.gameObject.tag=="square" && this.transform.parent.gameObject.tag=="square"){
+			if(hit.collider.gameObject.tag=="square" && this.transform.parent.gameObject.tag=="square" &&
+			   hit.collider.gameObject.GetComponent<SquareScript>().IsHit()==false){
+				wasHit= hit.collider.gameObject;
+				wasHit.GetComponent<SquareScript>().NowHit();
 				hit.collider.gameObject.SendMessage("SetFlag");
-				this.transform.parent.gameObject.SendMessage("Add");
+				if(nowSquare==true){
+					this.transform.parent.gameObject.SendMessage("HitEnd");
+					nowSquare=false;
+				}
+				this.transform.parent.gameObject.SendMessage("Add",wasHit);
 				this.audio.PlayOneShot(clash);
 				square=true;
 			}
-			if(hit.collider.gameObject.tag=="circle" && this.transform.parent.gameObject.tag=="circle"){
+			if(hit.collider.gameObject.tag=="circle" && this.transform.parent.gameObject.tag=="circle" &&
+			   hit.collider.gameObject.GetComponent<CircleScript>().IsHit()==false){
 				//hit.collider.gameObject.SendMessage("Add");
+				wasHit= hit.collider.gameObject;
+				//hit.collider.gameObject.GetComponent<CircleScript>().NowHit();
+				wasHit.GetComponent<CircleScript>().NowHit();
 				hit.collider.gameObject.SendMessage("SetFlag");
-				this.transform.parent.gameObject.SendMessage("Add");
+				if(nowCircle==true){
+					this.transform.parent.gameObject.SendMessage("HitEnd");
+					nowCircle=false;
+				}
+				this.transform.parent.gameObject.SendMessage("Add",wasHit);
 				this.audio.PlayOneShot(clash);
 				circle=true;
 			}
-			if(hit.collider.gameObject.tag=="hexagon" && this.transform.parent.gameObject.tag=="hexagon"){
+			if(hit.collider.gameObject.tag=="hexagon" && this.transform.parent.gameObject.tag=="hexagon" &&
+			   hit.collider.gameObject.GetComponent<HexagonScript>().IsHit()==false){
 				//hit.collider.gameObject.SendMessage("Add");
+				wasHit= hit.collider.gameObject;
+				wasHit.GetComponent<HexagonScript>().NowHit();
 				hit.collider.gameObject.SendMessage("SetFlag");
-				this.transform.parent.gameObject.SendMessage("Add");
+				if(nowHexagon==true){
+					this.transform.parent.gameObject.SendMessage("HitEnd");
+					nowHexagon=false;
+				}
+				this.transform.parent.gameObject.SendMessage("Add",wasHit);
 				this.audio.PlayOneShot(clash);
 				hexagon=true;
 			}
@@ -101,24 +127,40 @@ public class LaserScript : MonoBehaviour
 				if(endFlagSquare){
 					this.transform.parent.gameObject.SendMessage("LossFlag");
 					endFlagSquare=false;
+					wasHit.GetComponent<SquareScript>().NowHit();
+					this.transform.parent.gameObject.SendMessage("Subtract");
 				}
-				this.transform.parent.gameObject.SendMessage("Subtract");
+				else{
+					wasHit.GetComponent<SquareScript>().NowHit();
+					this.transform.parent.gameObject.SendMessage("Subtract");
+				}
 				square=false;
 			}
 			if(circle){
 				if(endFlagCircle){
 					this.transform.parent.gameObject.SendMessage("LossFlag");
 					endFlagCircle=false;
+					wasHit.GetComponent<CircleScript>().NowHit();
+					this.transform.parent.gameObject.SendMessage("Subtract");
+
 				}
-				this.transform.parent.gameObject.SendMessage("Subtract");
+				else{
+					wasHit.GetComponent<CircleScript>().NowHit();
+					this.transform.parent.gameObject.SendMessage("Subtract");
+				}
 				circle=false;
 			}
 			if(hexagon){
 				if(endFlagHexagon){
 					this.transform.parent.gameObject.SendMessage("LossFlag");
 					endFlagHexagon=false;
+					wasHit.GetComponent<HexagonScript>().NowHit();
+					this.transform.parent.gameObject.SendMessage("Subtract");
 				}
-				this.transform.parent.gameObject.SendMessage("Subtract");
+				else{
+					wasHit.GetComponent<HexagonScript>().NowHit();
+					this.transform.parent.gameObject.SendMessage("Subtract");
+				}
 				hexagon=false;
 			}
 		}

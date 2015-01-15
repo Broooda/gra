@@ -4,6 +4,7 @@ using System.Collections;
 public class LockpickingStarter : MonoBehaviour
 {
 	private bool param;
+	private bool won=false;
 	public static bool lockpickIsEnabled;
 	public AudioClip pick;
 	// Use this for initialization
@@ -12,7 +13,7 @@ public class LockpickingStarter : MonoBehaviour
 		lockpickIsEnabled = false;
 	}
 	void Update(){
-		if (Input.GetKey(KeyCode.E) && param==true) {
+		if (Input.GetKey(KeyCode.E) && param==true && won==false) {
 			param = false;
 			if (!lockpickIsEnabled)
 			{
@@ -27,12 +28,13 @@ public class LockpickingStarter : MonoBehaviour
 			GameObject.Find("First Person Controller").SendMessage("SetControllable",true);
 			CameraManager.SelectCamera (0);
 		}*/
-		if (MotherScript.good == 5) {
+		if (MotherScript.good == 5 && won==false) {
 			lockpickIsEnabled = false;
 			GameObject.Find("First Person Controller").SendMessage("SetControllable",true);
 			CameraManager.SelectCamera (0);
 			hud.addItem("Srebrny klucz");
 			audio.PlayOneShot(pick);
+			won=true;
 		}
 	}
 	void OnTriggerEnter(Collider col){
