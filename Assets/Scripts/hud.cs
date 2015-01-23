@@ -201,7 +201,7 @@ public class hud : MonoBehaviour {
 	public void addUV(){
 		//fwd.Set (0f, 0f,0f);
 		//fwd += transform.position;
-		uvlocal= Instantiate(uvobject,transform.position-transform.forward,transform.rotation) as GameObject;
+		uvlocal= Instantiate(uvobject,transform.position+transform.forward,transform.rotation) as GameObject;
 		Transform t = uvlocal.transform;
 		t.parent = transform;
 		UVTrigger.On ();
