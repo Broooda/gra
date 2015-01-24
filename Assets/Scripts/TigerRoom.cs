@@ -43,7 +43,7 @@ public class TigerRoom : MonoBehaviour {
 		yield return new WaitForSeconds (0.2f);
 		doorIsOpen=true;
 		if(firstOpen==true){
-			yield return new WaitForSeconds (1.2f);
+			yield return new WaitForSeconds (2.1f);
 			audio.PlayOneShot(Comment);
 			firstOpen=false;
 		}
