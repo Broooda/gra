@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CameraManager : MonoBehaviour {
 
+	public static float counter=0;
 	public static GameObject[] cameras;
     public GameObject cam1; // koniecznie MAIN CAMERA plansza poczatek glownej gry
 	public GameObject cam2; //blocks
@@ -40,6 +41,12 @@ public class CameraManager : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+		if (cameras [0].activeSelf == true) {
+			counter += Time.deltaTime*0.85f; //Time.deltaTime will increase the value with 1 every second.
+			//Debug.Log(counter);
+		} 
+		else {
+		}
 	
 	}
 	public static void SelectCamera(int index){

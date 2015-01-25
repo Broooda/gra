@@ -22,7 +22,7 @@ public class hud : MonoBehaviour {
 	public static bool playKey;
 	public static bool playDrink;
 
-	public static float barDisplay;
+	public static float barDisplay=0;
 	public static float thirst;
 
 	public AudioClip drinkSound;
@@ -69,7 +69,9 @@ public class hud : MonoBehaviour {
         {
             Application.LoadLevel(0);
         }
-		hud.barDisplay = Time.time * 0.85f;
+
+		hud.barDisplay = CameraManager.counter;
+
 		if (playKey) {
 						audio.PlayOneShot (keySound);
 			playKey=false;
