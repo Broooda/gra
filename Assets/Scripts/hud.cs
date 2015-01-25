@@ -53,7 +53,7 @@ public class hud : MonoBehaviour {
 		allitems.Add ("latarka", latarka);
 		allitems.Add ("UV", latarkauv);
 
-		//myitems.Add ("Zielony klucz", zielony_klucz);
+		myitems.Add ("Zielony klucz", zielony_klucz);
 		//myitems.Add ("Niebieski klucz", niebieski_klucz);
 		//myitems.Add ("Czerwony klucz", czerwony_klucz);
 		//myitems.Add ("Zloty klucz", zloty_klucz);
@@ -69,7 +69,7 @@ public class hud : MonoBehaviour {
         {
             Application.LoadLevel(0);
         }
-		hud.barDisplay = Time.time;
+		hud.barDisplay = Time.time * 0.85f;
 		if (playKey) {
 						audio.PlayOneShot (keySound);
 			playKey=false;
@@ -141,7 +141,12 @@ public class hud : MonoBehaviour {
 		int iter = 0;
 		foreach(DictionaryEntry entry in myitems){
 			GUI.DrawTexture(new Rect(((boxPosition+(iter*boxWidth))+boxWidth/2),Screen.height-90,50,90), (Texture)entry.Value, ScaleMode.StretchToFill, true, 0);
-			GUI.Label (new Rect(((boxPosition+(iter*boxWidth))+boxWidth/2),Screen.height-95,200,80),(iter+1).ToString());
+			if(entry.Key.ToString() == "latarka"){
+				GUI.Label (new Rect(((boxPosition+(iter*boxWidth))+boxWidth/2),Screen.height-95,200,80),"F");
+			}
+			if(entry.Key.ToString() == "UV"){
+				GUI.Label (new Rect(((boxPosition+(iter*boxWidth))+boxWidth/2),Screen.height-95,200,80),"U");
+			}
 			GUI.Label (new Rect(((boxPosition+(iter*boxWidth))+boxWidth/2)-5,Screen.height-20,200,80),entry.Key.ToString());
 			GUI.DrawTexture(new Rect((boxPosition+(iter*boxWidth))+boxWidth,Screen.height-100,6,100), line);
 			iter = iter+1;
