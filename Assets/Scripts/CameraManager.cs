@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraManager : MonoBehaviour {
 
 	public static GameObject[] cameras;
-	public GameObject cam1; // koniecznie MAIN CAMERA
+    public GameObject cam1; // koniecznie MAIN CAMERA plansza poczatek glownej gry
 	public GameObject cam2; //blocks
 	public GameObject cam3; //shooter
 	public GameObject cam4; //keypad
@@ -31,7 +31,7 @@ public class CameraManager : MonoBehaviour {
         cameras [9] = cam10;
         cameras [10] = cam11;
 		
-        for (int i = 1; i < cameras.Length; i++) //na poczatku wylacza wszsytkie kamery oprocz glownej
+        for (int i = 0; i < cameras.Length-1; i++) //na poczatku wylacza wszsytkie kamery oprocz glownej
         {
             //cameras[i].active = false;
 			cameras[i].SetActive(false);

@@ -38,6 +38,8 @@ public class GdzieJestemPlay : MonoBehaviour
     private AudioSource torrentino;
     private bool playedOnce10 = false;
 
+    public GameObject mainCamera;
+
 
 
 	// Use this for initialization
@@ -60,7 +62,7 @@ public class GdzieJestemPlay : MonoBehaviour
 
     void Update()
     {
-        if (!wasPlayedOnce)
+        if (!wasPlayedOnce && mainCamera.activeInHierarchy)
         {
             gdzieJestem.PlayDelayed(3);
             wasPlayedOnce = true;
