@@ -20,4 +20,7 @@ public class UV : MonoBehaviour {
 			}
 		}
 	}
+	void OnDisable() {
+		if(code!=null) code.SendMessage("CodeActive",false);
+	}
 }
