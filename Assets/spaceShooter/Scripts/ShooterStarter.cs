@@ -16,8 +16,8 @@ public class ShooterStarter : MonoBehaviour
             if (!gameIsEnabled)
             {
 				GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
-				CameraManager.SelectCamera (2);
-                gameIsEnabled = true;
+				CameraManager.SelectCamera (7);//wlacza planze z opisem
+                //gameIsEnabled = true;
 			}
 		}
 	}

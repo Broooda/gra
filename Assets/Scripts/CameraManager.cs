@@ -5,16 +5,20 @@ public class CameraManager : MonoBehaviour {
 
 	public static GameObject[] cameras;
 	public GameObject cam1; // koniecznie MAIN CAMERA
-	public GameObject cam2;
-	public GameObject cam3;
-	public GameObject cam4;
-	public GameObject cam5;
-	public GameObject cam6;
-	public GameObject cam7;
+	public GameObject cam2; //blocks
+	public GameObject cam3; //shooter
+	public GameObject cam4; //keypad
+	public GameObject cam5; //keyboard
+	public GameObject cam6; //lockpicking
+	public GameObject cam7; //birdgame
+    public GameObject cam8; //plansza shooter
+    public GameObject cam9; //plansza lodowka
+    public GameObject cam10; //plansza lockpicking
+    public GameObject cam11; //plansza poczatek glownej gry
 
 	// Use this for initialization
 	void Start () {
-		cameras = new GameObject[7];
+		cameras = new GameObject[11];
 		cameras [0] = cam1;
 		cameras [1] = cam2;
 		cameras [2] = cam3;
@@ -22,6 +26,10 @@ public class CameraManager : MonoBehaviour {
 		cameras [4] = cam5;
 		cameras [5] = cam6;
 		cameras [6] = cam7;
+        cameras [7] = cam8;
+        cameras [8] = cam9;
+        cameras [9] = cam10;
+        cameras [10] = cam11;
 		
         for (int i = 1; i < cameras.Length; i++) //na poczatku wylacza wszsytkie kamery oprocz glownej
         {

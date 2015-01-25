@@ -14,7 +14,7 @@ public class Fridge : MonoBehaviour {
 		if (Input.GetKey(KeyCode.E) && param==true) {
 			if(!firstOpen){
 				GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
-				CameraManager.SelectCamera (1);
+				CameraManager.SelectCamera (8); //przenosi do opisu gry na lodowce
 				firstOpen=true;
 			}
 			if(transform.FindChild("Right").localEulerAngles.y > 5.0f ){

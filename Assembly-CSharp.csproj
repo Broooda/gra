@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>d:/Programy/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>d:/Programy/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +81,8 @@
      <Compile Include="Assets\Scripts\TigerRoom.cs" />
      <Compile Include="Assets\Scripts\UV.cs" />
      <Compile Include="Assets\Scripts\UVTrigger.cs" />
+     <Compile Include="Assets\Scripts\ZOpisDoLodowka.cs" />
+     <Compile Include="Assets\Scripts\ZOpisuDoShootera.cs" />
      <Compile Include="Assets\Scripts\hud.cs" />
      <Compile Include="Assets\Scripts\komentarze\GdzieJestemPlay.cs" />
      <Compile Include="Assets\bathroom.cs" />
