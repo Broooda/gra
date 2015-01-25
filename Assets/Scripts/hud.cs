@@ -137,7 +137,7 @@ public class hud : MonoBehaviour {
 			Application.LoadLevel("loss");
 			GUI.Box (new Rect (Screen.width / 2 - 120, Screen.height - 120, 1, 20), water);
 				}
-		GUI.Label (new Rect(Screen.width/2-80,Screen.height-120,190,20),"pragnienie");
+		GUI.Label (new Rect(Screen.width/2-50,Screen.height-120,190,20),"NAWODNIENIE");
 		int iter = 0;
 		foreach(DictionaryEntry entry in myitems){
 			GUI.DrawTexture(new Rect(((boxPosition+(iter*boxWidth))+boxWidth/2),Screen.height-90,50,90), (Texture)entry.Value, ScaleMode.StretchToFill, true, 0);
@@ -212,6 +212,8 @@ public class hud : MonoBehaviour {
 		UVTrigger.On ();
 		audio.PlayOneShot(flashlightSound);
 		uvlocal.collider.enabled = false;
+		uvlocal.transform.FindChild ("UV_body").collider.enabled = false;
+
 	}
 	public void addFlashlight(){
 		//fwd.Set (0f, 0f,0f);
@@ -222,5 +224,6 @@ public class hud : MonoBehaviour {
 		LatarkaTrigger.On ();
 		audio.PlayOneShot(flashlightSound);
 		latarkalocal.collider.enabled = false;
+		latarkalocal.transform.FindChild ("latarka_body").collider.enabled = false;
 	}
 }
