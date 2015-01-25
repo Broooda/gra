@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\TigerRoom.cs" />
      <Compile Include="Assets\Scripts\UV.cs" />
      <Compile Include="Assets\Scripts\UVTrigger.cs" />
+     <Compile Include="Assets\Scripts\ZOpisDoLockPicking.cs" />
      <Compile Include="Assets\Scripts\ZOpisDoLodowka.cs" />
      <Compile Include="Assets\Scripts\ZOpisuDoShootera.cs" />
      <Compile Include="Assets\Scripts\hud.cs" />

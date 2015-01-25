@@ -18,7 +18,7 @@ public class LockpickingStarter : MonoBehaviour
 			if (!lockpickIsEnabled)
 			{
 				GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
-				CameraManager.SelectCamera (5);
+				CameraManager.SelectCamera (9); // przenosi kamere do planszy z opisem
 				lockpickIsEnabled = true;
 			}
 		}
