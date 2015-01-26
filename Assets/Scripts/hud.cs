@@ -71,9 +71,10 @@ public class hud : MonoBehaviour {
 
 	void Update(){
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.LoadLevel(0);
-            Screen.showCursor = true;
+		{	
+			Time.timeScale=0.0f;
+			CameraManager.SelectCamera(11);
+			GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
         }
 
 		hud.barDisplay = CameraManager.counter;
