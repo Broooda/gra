@@ -6,9 +6,10 @@ public class Fridge : MonoBehaviour {
 	private bool doorsAreOpen=false;
 	private bool firstOpen=false;
 	public int speedOpen=100;
+	public GameObject zielony_klucz;
 	// Use this for initialization
 	void Start () {
-		
+		zielony_klucz.collider.enabled = false;
 	}
 	void Update(){
 		if (Input.GetKey(KeyCode.E) && param==true) {
@@ -19,6 +20,11 @@ public class Fridge : MonoBehaviour {
 			}
 			if(transform.FindChild("Right").localEulerAngles.y > 5.0f ){
 				transform.FindChild("Right").Rotate(Vector3.down*Time.deltaTime*speedOpen);
+			}
+			if(transform.FindChild("Right").localEulerAngles.y <= 5.0f ){
+				if(zielony_klucz!=null){
+					zielony_klucz.collider.enabled = true;
+				}
 			}
 		}
 		if(doorsAreOpen){

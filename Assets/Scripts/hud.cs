@@ -21,11 +21,15 @@ public class hud : MonoBehaviour {
 	public  AudioClip keySound;
 	public static bool playKey;
 	public static bool playDrink;
+	public static bool playTiger;
+	public static bool playTigerGrowling;
 
 	public static float barDisplay=0;
 	public static float thirst;
 
 	public AudioClip drinkSound;
+	public AudioClip tigerSound;
+	public AudioClip tigerGrowlingSound;
 
 	public static string whatitem;
 	public static bool showinfo;
@@ -52,8 +56,9 @@ public class hud : MonoBehaviour {
 		allitems.Add ("Srebrny klucz", srebrny_klucz);
 		allitems.Add ("latarka", latarka);
 		allitems.Add ("UV", latarkauv);
+		//Screen.showCursor = false;
 
-		myitems.Add ("Zielony klucz", zielony_klucz);
+		//myitems.Add ("Zielony klucz", zielony_klucz);
 		//myitems.Add ("Niebieski klucz", niebieski_klucz);
 		//myitems.Add ("Czerwony klucz", czerwony_klucz);
 		//myitems.Add ("Zloty klucz", zloty_klucz);
@@ -79,6 +84,14 @@ public class hud : MonoBehaviour {
 		if (playDrink) {
 			audio.PlayOneShot (drinkSound);
 			playDrink=false;
+		}
+		if(playTiger){
+			audio.PlayOneShot(tigerSound);
+			playTiger=false;
+		}
+		if(playTigerGrowling){
+			audio.PlayOneShot(tigerGrowlingSound);
+			playTigerGrowling=false;
 		}
 		if (showmessage) {
 			StartCoroutine(wait());
@@ -174,6 +187,12 @@ public class hud : MonoBehaviour {
 
 	public static void pdrink(){
 		playDrink = true;
+	}
+	public static void Tiger(){
+		playTiger = true;
+	}
+	public static void TigerGrowling(){
+		playTigerGrowling = true;
 	}
 
 	IEnumerator wait(){
