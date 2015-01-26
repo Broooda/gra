@@ -114,6 +114,7 @@ public class hud : MonoBehaviour {
 			else{
                 UVOn = false;
 				GameObject.Destroy(uvlocal);
+                audio.PlayOneShot(flashlightSound);
 			}
 			nextSwitch=Time.time+0.2f;
 		}

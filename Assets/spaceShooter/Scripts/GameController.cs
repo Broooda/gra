@@ -117,6 +117,15 @@ public class GameController : MonoBehaviour
                 yield return new WaitForSeconds(waveWait);
             }
         }
+        yield return new WaitForSeconds(6);
+        if (gameOver)
+        {
+            text3D.text = "Game Over";
+            yield return new WaitForSeconds(2);
+            text3D.text = "Press 'R' for Restart";
+            restart = true;
+            yield break;
+        }
         if (!gameOver)
         {
             text3D.text = "You Won";
