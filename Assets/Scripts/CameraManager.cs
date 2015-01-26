@@ -42,7 +42,7 @@ public class CameraManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (cameras [0].activeSelf == true) {
-			counter += Time.deltaTime*0.85f; //Time.deltaTime will increase the value with 1 every second.
+			counter += Time.deltaTime*1.5f; //Time.deltaTime will increase the value with 1 every second.
 			//Debug.Log(counter);
 		} 
 		else {
