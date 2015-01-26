@@ -12,6 +12,7 @@ public class keyPad : MonoBehaviour {
 		if (Input.GetKey(KeyCode.E) && param==true && ok==false) {
 			GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
 			CameraManager.SelectCamera (3);
+            Screen.showCursor = true;
 		}
 		if (param == true && ok == true && opened==false) {
 				if(firstOpen){

@@ -20,6 +20,7 @@ public class MainGameScript : MonoBehaviour {
 		winText.text="WYGRANA!";
 		yield return new WaitForSeconds (2);
 		CameraManager.SelectCamera (0);
+        Screen.showCursor = false;
 		GameObject.Find ("First Person Controller").SendMessage ("SetControllable", true);
 		BlockWin = true;
 		winText.text = "";

@@ -56,7 +56,7 @@ public class hud : MonoBehaviour {
 		allitems.Add ("Srebrny klucz", srebrny_klucz);
 		allitems.Add ("latarka", latarka);
 		allitems.Add ("UV", latarkauv);
-		//Screen.showCursor = false;
+		Screen.showCursor = false;
 
 		//myitems.Add ("Zielony klucz", zielony_klucz);
 		//myitems.Add ("Niebieski klucz", niebieski_klucz);

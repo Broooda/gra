@@ -11,6 +11,7 @@ public class tarantinoCode : MonoBehaviour {
 			if(codeOk==false){
 			GameObject.Find("First Person Controller").SendMessage("SetControllable",false);
 			CameraManager.SelectCamera (4);
+            Screen.showCursor = true;
 			}
 			else{
 				if(transform.FindChild("Capsule02").localEulerAngles.z > 290.0f ){

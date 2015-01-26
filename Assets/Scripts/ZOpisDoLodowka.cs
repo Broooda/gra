@@ -8,6 +8,7 @@ public class ZOpisDoLodowka : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && camera.enabled)
         {
             CameraManager.SelectCamera(1);
+            Screen.showCursor = true;
         }
     }
 }
