@@ -88,6 +88,7 @@ public class MainMenuScript : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width/2 - 75, Screen.height / 2 - 100, 150,25),"New Game"))
 			{
 				Application.LoadLevel("main");
+                Screen.showCursor = false;
 			}
 			if(GUI.Button(new Rect(Screen.width/2 -75, Screen.height / 2 - 65, 150,25),"Options"))
 			{

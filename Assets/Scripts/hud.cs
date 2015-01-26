@@ -73,6 +73,7 @@ public class hud : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.LoadLevel(0);
+            Screen.showCursor = true;
         }
 
 		hud.barDisplay = CameraManager.counter;
